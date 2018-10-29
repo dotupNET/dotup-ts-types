@@ -1,6 +1,8 @@
 test/
 coverage/
 src/
+spec/
+docs/
 scripts/
 .vscode
 .gitignore
