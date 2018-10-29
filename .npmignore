@@ -6,6 +6,7 @@ docs/
 scripts/
 .vscode
 .gitignore
+.npmignore
 .travis.yml
 .idea
 .nyc_output
