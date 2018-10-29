@@ -1,0 +1,42 @@
+{
+  "name": "dotup-ts-library-template",
+  "version": "0.0.11",
+  "description": "template for typescript libraries",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean-dist": "rimraf dist",
+    "build": "rimraf dist && tsc",
+    "test": "jasmine-ts",
+    "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.e2e).ts\"",
+    "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
+    "ci": "npm run build",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run ci",
+    "preversion": "npm run ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotupNET/dotup-ts-library-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "template"
+  ],
+  "author": "Peter Ullrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotupNET/dotup-ts-library-template/issues"
+  },
+  "homepage": "https://github.com/dotupNET/dotup-ts-library-template#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.8",
+    "gh-pages": "^2.0.1",
+    "jasmine": "^3.3.0",
+    "jasmine-ts": "^0.3.0",
+    "ts-node": "^7.0.1",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.3"
+  }
+}
