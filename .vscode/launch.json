@@ -19,6 +19,17 @@
 			"outFiles": [
 				"${workspaceFolder}/dist/*.js"
 			]
-		}
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jasmine Current File",
+      "program": "${workspaceFolder}/node_modules/jasmine-ts/lib/index",
+      "args": [
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
   ]
 }
