@@ -1,6 +1,6 @@
 {
   "name": "dotup-ts-library-template",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
