@@ -1,4 +1,4 @@
-import { AwesomeLibrary } from "./AwesomeLibrary";
+import { AwesomeLibrary } from "../src/AwesomeLibrary";
 
 describe('AwesomeLibrary',()=>{
 
