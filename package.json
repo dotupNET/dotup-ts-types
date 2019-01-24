@@ -1,17 +1,17 @@
 {
   "name": "dotup-ts-library-template",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "release": "npm run test && git push && npm run gh-pages && npm publish",
+    "release": "npm run clean-build && npm run test && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf dist && tsc",
     "test": "jasmine-ts",
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
-    "ci": "npm run build",
+    "ci": "npm run clean-build",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "npm run ci",
     "preversion": "npm run ci"

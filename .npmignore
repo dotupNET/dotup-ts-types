@@ -1,6 +1,7 @@
 test/
 coverage/
 src/
+src/sample.ts
 src/spec/
 dist/spec/
 spec/
