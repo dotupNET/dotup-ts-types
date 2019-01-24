@@ -1,6 +1,8 @@
 test/
 coverage/
 src/
+src/spec/
+dist/spec/
 spec/
 docs/
 scripts/

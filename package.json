@@ -1,13 +1,13 @@
 {
   "name": "dotup-ts-library-template",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "release": "npm run test && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
-    "build": "rimraf dist && tsc",
+    "clean-build": "rimraf dist && tsc",
     "test": "jasmine-ts",
     "docs": "typedoc --mode file --out docs src --exclude \"**/*+(index|.spec|.e2e).ts\"",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
@@ -32,11 +32,14 @@
   },
   "homepage": "https://github.com/dotupNET/dotup-ts-library-template#readme",
   "devDependencies": {
-    "@types/jest": "^23.3.8",
+    "@types/jasmine": "^3.3.7",
     "gh-pages": "^2.0.1",
     "jasmine": "^3.3.0",
     "jasmine-ts": "^0.3.0",
-    "ts-node": "^7.0.1",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-ts-console-reporter": "^3.1.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.1",
     "typedoc": "^0.14.0",
     "typescript": "^3.1.3"
   }
