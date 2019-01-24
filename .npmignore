@@ -4,6 +4,7 @@ src/
 src/sample.ts
 src/spec/
 dist/spec/
+dist/sample.*
 spec/
 docs/
 scripts/
