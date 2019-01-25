@@ -1,5 +1,6 @@
 test/
 coverage/
+secrets/
 src/
 src/sample.ts
 src/spec/
