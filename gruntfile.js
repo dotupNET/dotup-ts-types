@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
     nodemon: {
       dev: {
-        script: '/dist/sample.js'
+        script: './dist/sample.js'
       },
       options: {
         ignore: [
@@ -81,6 +81,23 @@ module.exports = function (grunt) {
       }
     },
 
+    run: {
+      ghpages: {
+        cmd: 'npm.cmd',
+        args: [
+          'run',
+          'gh-pages'
+        ]
+      },
+      release: {
+        cmd: 'npm.cmd',
+        args: [
+          'run',
+          'release'
+        ]
+      }
+    },
+
     clean: ['dist']
 
   });
@@ -92,9 +109,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks("grunt-nodemon");
   grunt.loadNpmTasks("grunt-concurrent");
+  grunt.loadNpmTasks('grunt-run');
 
   // Default tasks.
   grunt.registerTask("serve", ["concurrent:watchers"]);
   grunt.registerTask("build", ["clean", "ts", "copy:all"]);
   grunt.registerTask('default', ["tslint:all", "ts:build", "copy:all"]);
+  grunt.registerTask("gh-pages", ["run:ghpages"]);
+  grunt.registerTask("release", ["run:release"]);
 };
