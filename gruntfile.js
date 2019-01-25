@@ -71,7 +71,7 @@ module.exports = function (grunt) {
     },
 
     copy: {
-      all: {
+      assets: {
         cwd: 'src',
         // These are the directories to be copied as-is.
         // These must also be specified below in the watch block.
@@ -82,20 +82,28 @@ module.exports = function (grunt) {
     },
 
     run: {
-      ghpages: {
-        cmd: 'npm.cmd',
-        args: [
-          'run',
-          'gh-pages'
-        ]
-      },
       release: {
         cmd: 'npm.cmd',
         args: [
           'run',
           'release'
         ]
+      },
+      publish: {
+        cmd: 'npm.cmd',
+        args: [
+          'run',
+          'npm-publish'
+        ]
+      },
+      ghpages: {
+        cmd: 'npm.cmd',
+        args: [
+          'run',
+          'gh-pages'
+        ]
       }
+
     },
 
     clean: ['dist']
@@ -113,8 +121,7 @@ module.exports = function (grunt) {
 
   // Default tasks.
   grunt.registerTask("serve", ["concurrent:watchers"]);
-  grunt.registerTask("build", ["clean", "ts", "copy:all"]);
-  grunt.registerTask('default', ["tslint:all", "ts:build", "copy:all"]);
-  grunt.registerTask("gh-pages", ["run:ghpages"]);
-  grunt.registerTask("release", ["run:release"]);
+  grunt.registerTask("build", ["clean", "ts", "copy:assets"]);
+  grunt.registerTask('default', ["tslint:all", "ts:build", "copy:assets"]);
+  grunt.registerTask("release", ["build", "run:ghpages", "run:publish"]);
 };
