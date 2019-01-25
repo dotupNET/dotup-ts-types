@@ -57,6 +57,13 @@
 			"problemMatcher": [
 				"$tslint5"
 			]
+		},
+		{
+			"type": "grunt",
+			"task": "publish",
+			"problemMatcher": [
+				"$tsc"
+			]
 		}
 	]
 }
