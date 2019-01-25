@@ -82,11 +82,11 @@ module.exports = function (grunt) {
     },
 
     run: {
-      release: {
+      test: {
         cmd: 'npm.cmd',
         args: [
           'run',
-          'release'
+          'test'
         ]
       },
       publish: {
@@ -122,6 +122,6 @@ module.exports = function (grunt) {
   // Default tasks.
   grunt.registerTask("serve", ["concurrent:watchers"]);
   grunt.registerTask("build", ["clean", "ts", "copy:assets"]);
-  grunt.registerTask('default', ["tslint:all", "ts:build", "copy:assets"]);
-  grunt.registerTask("release", ["build", "run:ghpages", "run:publish"]);
+  grunt.registerTask("release", ["clean", "ts", "run:test", "tslint:all", "copy:assets"]);
+  grunt.registerTask("publish", ["release", "run:ghpages", "run:publish"]);
 };

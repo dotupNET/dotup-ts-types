@@ -1,8 +1,8 @@
-import { AwesomeLibrary } from "./AwesomeLibrary";
+import { AwesomeLibrary } from './AwesomeLibrary';
 
-export class Sample{
+export class Sample {
 
-  run(): void{
+  run(): void {
     const awesome = new AwesomeLibrary();
     console.log(awesome);
     console.log('Sample done');

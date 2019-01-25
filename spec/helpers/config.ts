@@ -1,14 +1,19 @@
-// tslint:disable-next-line:no-var-requires
-const TSConsoleReporter = require("jasmine-ts-console-reporter");
+// tslint:disable:no-implicit-dependencies
+// tslint:disable:no-require-imports
 
 // tslint:disable-next-line:no-var-requires
-const jasmineReporters = require("jasmine-reporters");
+const TSConsoleReporter = require('jasmine-ts-console-reporter');
 
-jasmine.getEnv().clearReporters(); // Clear default console reporter
+// tslint:disable-next-line:no-var-requires
+const jasmineReporters = require('jasmine-reporters');
+
+jasmine.getEnv()
+  .clearReporters(); // Clear default console reporter
 
 /* TSConsoleReporter
 */
-jasmine.getEnv().addReporter(new TSConsoleReporter());
+jasmine.getEnv()
+  .addReporter(new TSConsoleReporter());
 
 /* TerminalReporter
 const terminalReporter = new jasmineReporters.TerminalReporter();

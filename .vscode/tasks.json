@@ -36,6 +36,27 @@
 			],
 			"group": "test",
 			"problemMatcher": "$jasmine"
+		},
+		{
+			"type": "grunt",
+			"task": "tslint",
+			"problemMatcher": [
+				"$tslint5"
+			]
+		},
+		{
+			"type": "npm",
+			"script": "release",
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"type": "grunt",
+			"task": "release",
+			"problemMatcher": [
+				"$tslint5"
+			]
 		}
 	]
 }

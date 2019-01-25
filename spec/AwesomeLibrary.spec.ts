@@ -1,10 +1,11 @@
-import { AwesomeLibrary } from "../src/AwesomeLibrary";
+import { AwesomeLibrary } from '../src/AwesomeLibrary';
 
-describe('AwesomeLibrary',()=>{
+describe('AwesomeLibrary', () => {
 
   it('should create an instance', () => {
     const value = new AwesomeLibrary();
-    expect(value).toBeTruthy();
+    expect(value)
+      .toBeTruthy();
   });
 
 });
