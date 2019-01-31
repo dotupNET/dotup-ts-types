@@ -30,6 +30,23 @@
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Current TS File",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "${relativeFile}"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "stopOnEntry": false,
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
     }
   ]
 }
