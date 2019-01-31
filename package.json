@@ -1,10 +1,11 @@
 {
   "name": "dotup-ts-library-template",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "template for typescript libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "release": "npm run clean-build && npm run test && git push && npm run gh-pages && npm publish",
     "clean-dist": "rimraf dist",
     "clean-build": "rimraf dist && tsc",
