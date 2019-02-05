@@ -2,8 +2,9 @@
 export module ObjectTools {
 
   // Adds the element at a specific position inside the linked list
-  export function GetMethodNames(obj: any, excluded: string[] = ['constructor']): string[] {
-    const methods: string[] = [];
+  export function GetMethodNames(obj: any, ...excluded: string[]): string[] {
+    const methods: string[] = excluded || [];
+    methods.push('constructor');
     let item = obj;
 
     // tslint:disable-next-line:no-conditional-assignment
