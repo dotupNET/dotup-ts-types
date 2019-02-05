@@ -34,10 +34,10 @@ describe('ObjectTools', () => {
   it('should list methods', () => {
     const myClass = new MyClass();
 
-    const names = ObjectTools.GetMethodNames(myClass);
+    const names = ObjectTools.GetMethodNames(myClass, 'C');
 
     expect(names.length)
-      .toBe(4);
+      .toBe(3);
 
     expect(names[1])
       .toBe('A');

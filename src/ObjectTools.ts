@@ -3,8 +3,9 @@ export module ObjectTools {
 
   // Adds the element at a specific position inside the linked list
   export function GetMethodNames(obj: any, ...excluded: string[]): string[] {
-    const methods: string[] = excluded || [];
-    methods.push('constructor');
+    const skip: string[] = excluded || [];
+    const methods: string[] = [];
+    skip.push('constructor');
     let item = obj;
 
     // tslint:disable-next-line:no-conditional-assignment
@@ -13,7 +14,7 @@ export module ObjectTools {
       const keys = Reflect.ownKeys(item);
       if (item instanceof Object) {
         keys.forEach((k) => {
-          if (excluded.indexOf(<string>k) < 0) {
+          if (skip.indexOf(<string>k) < 0) {
             methods.push(<string>k);
           }
         });
