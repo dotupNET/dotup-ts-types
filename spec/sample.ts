@@ -1,11 +1,11 @@
 // import { Properties } from '../src/Properties';
 // tslint:disable-next-line:no-import-side-effect
-import '../src/StringTools';
+import { StringTools } from '../src/StringTools';
 export class Sample {
 
   run(): void {
 
-    const x = 'spieler {0} heißt {1}'.format(1, 'peter');
+    const x = StringTools.format('spieler {0} heißt {1}', 1, 'peter');
 
     const sourceObject = {
       str: 'src',
