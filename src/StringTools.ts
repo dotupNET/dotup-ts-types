@@ -1,24 +1,45 @@
 // tslint:disable
-interface String {
-  format(...args: any[]): string;
-}
 
-(<any>String.prototype).format =
-  function (...args: any) {
-    let str = this.toString();
+export module StringTools {
+
+  export function format(text: string, ...args: any[]): string {
+    let result = text;
+
     if (args.length) {
-      var t = typeof args[0];
+      const t = typeof args[0];
       var key;
-      var args = ("string" === t || "number" === t) ?
+      var values: any = ("string" === t || "number" === t) ?
         Array.prototype.slice.call(args)
         : args[0];
 
-      for (key in args) {
-        str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]);
+      for (key in values) {
+        result = result.replace(new RegExp("\\{" + key + "\\}", "gi"), values[key]);
       }
     }
 
-    return str;
+    return result;
   };
 
-export {}
+  // interface String {
+  //   format(...args: any[]): string;
+  // }
+
+  // (<any>String.prototype).format =
+  //   function (...args: any) {
+  //     let str = this.toString();
+  //     if (args.length) {
+  //       var t = typeof args[0];
+  //       var key;
+  //       var args = ("string" === t || "number" === t) ?
+  //         Array.prototype.slice.call(args)
+  //         : args[0];
+
+  //       for (key in args) {
+  //         str = str.replace(new RegExp("\\{" + key + "\\}", "gi"), args[key]);
+  //       }
+  //     }
+
+  //     return str;
+  //   };
+
+}
