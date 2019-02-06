@@ -1,8 +1,11 @@
-import { Properties } from '../src/Properties';
-
+// import { Properties } from '../src/Properties';
+// tslint:disable-next-line:no-import-side-effect
+import '../src/StringTools';
 export class Sample {
 
   run(): void {
+
+    const x = 'spieler {0} heißt {1}'.format(1, 'peter');
 
     const sourceObject = {
       str: 'src',
@@ -39,10 +42,9 @@ export class Sample {
       ]
     };
 
-    const prop = new Properties();
-    const result = prop.DeepMerge(sourceObject, targetObject);
+    // const result = obj.DeepMerge(sourceObject, targetObject);
 
-    console.log(result);
+    // console.log(result);
 
   }
 
