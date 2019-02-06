@@ -21,3 +21,4 @@ interface String {
     return str;
   };
 
+export {}
