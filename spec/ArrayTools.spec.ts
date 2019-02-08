@@ -56,4 +56,25 @@ describe('ArrayTools', () => {
       .toBe(11);
   });
 
+  it('should shoufle array', () => {
+    const arr: Number[] = [];
+
+    arr.push(1);
+    arr.push(2);
+    arr.push(3);
+    arr.push(4);
+    arr.push(5);
+
+    const shuffled = ArrayTools.shuffle(arr);
+
+    expect(shuffled.length)
+      .toBe(arr.length);
+
+    shuffled.forEach(item => {
+      expect(arr.indexOf(item) > -1)
+        .toBeTruthy();
+
+    });
+  });
+
 });
