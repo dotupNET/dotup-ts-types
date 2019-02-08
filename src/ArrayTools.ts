@@ -1,13 +1,8 @@
-// tslint:disable:no-null-keyword
-// tslint:disable:no-increment-decrement
-// tslint:disable:no-constant-condition
-
-// @JsonSerializable(true)
-// tslint:disable-next-line:no-unnecessary-class
-export class ArrayTools {
+// tslint:disable:no-any
+export namespace ArrayTools {
 
   // Adds the element at a specific position inside the linked list
-  static insert<T>(arr: T[], val: T | T[], previousItem?: T): void {
+  export function insert<T>(arr: T[], val: T | T[], previousItem?: T): void {
     const indexOfParent = arr.indexOf(previousItem);
 
     if (val instanceof Array) {
@@ -25,6 +20,61 @@ export class ArrayTools {
         arr.push(val);
       }
     }
+  }
+
+  // tslint:disable:no-increment-decrement
+  // tslint:disable:insecure-random
+  // tslint:disable-next-line:no-any
+  export function shuffle(array: any[]) {
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+      // Pick a random index
+      const index = Math.floor(Math.random() * counter);
+
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      const temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+
+    return array;
+  }
+
+  export function getUniqueRandomKeys(array: any[], count: number): string[] {
+    const f = Object.getOwnPropertyNames(array);
+    const result: string[] = [];
+
+    while (result.length < count) {
+
+      const key = f[Math.floor(Math.random() * f.length)];
+
+      if (!result.find(item => item === key)) {
+        result.push(key);
+      }
+    }
+
+    return result;
+  }
+
+  export function getUniqueRandomValues<T>(array: T[], count: number): T[] {
+    const result: T[] = [];
+    const arrayLength = array.length;
+
+    while (result.length < count) {
+
+      const element = array[Math.floor(Math.random() * arrayLength)];
+
+      if (!result.find(item => item === element)) {
+        result.push(element);
+      }
+    }
+
+    return result;
   }
 
 }

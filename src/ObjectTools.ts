@@ -1,5 +1,5 @@
 // tslint:disable:no-any
-export module ObjectTools {
+export namespace ObjectTools {
 
   // Adds the element at a specific position inside the linked list
   export function GetMethodNames(obj: any, ...excluded: string[]): string[] {

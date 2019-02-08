@@ -25,12 +25,6 @@ class MyClass extends BaseClass {
 
 describe('ObjectTools', () => {
 
-  // it('should create an instance', () => {
-  //   const value = new InsertableArray();
-  //   expect(value)
-  //     .toBeTruthy();
-  // });
-
   it('should list methods', () => {
     const myClass = new MyClass();
 
