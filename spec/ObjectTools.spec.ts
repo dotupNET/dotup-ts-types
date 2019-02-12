@@ -25,7 +25,7 @@ class MyClass extends BaseClass {
 
 describe('ObjectTools', () => {
 
-  it('should list methods', () => {
+  it('GetMethodNames', () => {
     const myClass = new MyClass();
 
     const names = ObjectTools.GetMethodNames(myClass, 'C');
@@ -35,6 +35,22 @@ describe('ObjectTools', () => {
 
     expect(names[1])
       .toBe('A');
+
+  });
+
+  it('GetOwnMethodNames', () => {
+    const myClass = new MyClass();
+
+    const names = ObjectTools.GetOwnMethodNames(myClass, 'B');
+
+    expect(names.length)
+      .toBe(2);
+
+    expect(names[0])
+      .toBe('A');
+
+    expect(names[1])
+      .toBe('C');
 
   });
 

@@ -24,6 +24,30 @@ export namespace ObjectTools {
     return methods;
   }
 
+  export function GetOwnMethodNames(instance: any, ...excluded: string[]): string[] {
+    const skip: string[] = excluded || [];
+    const methods: string[] = [];
+    skip.push('constructor');
+
+    const obj = Reflect.getPrototypeOf(instance);
+    const keys = Reflect.ownKeys(obj);
+    if (obj instanceof Object) {
+      keys.forEach((k) => {
+        if (hasMethod(obj, k.toString()) && skip.indexOf(<string>k) < 0) {
+          methods.push(<string>k);
+        }
+      });
+    }
+
+    return methods;
+  }
+
+  function hasMethod(obj: any, name: string): boolean {
+    const desc = Object.getOwnPropertyDescriptor(obj, name);
+
+    return !!desc && typeof desc.value === 'function';
+  }
+
   export function CopyEachSource<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
     Object.keys(source)
       .forEach(item => {
