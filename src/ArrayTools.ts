@@ -22,6 +22,13 @@ export namespace ArrayTools {
     }
   }
 
+  export function getArray<T>(value: T | T[] | undefined): T[] {
+    if(Array.isArray(value)){
+      return value;
+    }
+    return value === undefined ? []: [value];
+  }
+
   // tslint:disable:no-increment-decrement
   // tslint:disable:insecure-random
   // tslint:disable-next-line:no-any

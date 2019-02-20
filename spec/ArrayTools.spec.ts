@@ -77,4 +77,31 @@ describe('ArrayTools', () => {
     });
   });
 
+
+  it('should return array', () => {
+    const arr: Number[] = [1, 2, 3];
+
+    const withArray = ArrayTools.getArray(arr);
+
+    expect(withArray.length)
+      .toBe(arr.length);
+
+    expect(withArray[0])
+      .toBe(1);
+
+    const withNumber = ArrayTools.getArray(7);
+
+    expect(withNumber.length)
+      .toBe(1);
+
+    expect(withNumber[0])
+      .toBe(7);
+
+    const withUndefined = ArrayTools.getArray(undefined);
+
+    expect(withUndefined.length)
+      .toBe(0);
+
+  });
+
 });
