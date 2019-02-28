@@ -88,16 +88,25 @@
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/keyvaluepair.html" class="tsd-kind-icon">Key<wbr>Value<wbr>Pair</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported"><a href="globals.html#extendableenumtype" class="tsd-kind-icon">Extendable<wbr>Enum<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#functionnamesonly" class="tsd-kind-icon">Function<wbr>Names<wbr>Only</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#functionsonly" class="tsd-kind-icon">Functions<wbr>Only</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#nestedobject" class="tsd-kind-icon">Nested<wbr>Object</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#nestedobjectchild" class="tsd-kind-icon">Nested<wbr>Object<wbr>Child</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#nestedpartialobject" class="tsd-kind-icon">Nested<wbr>Partial<wbr>Object</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#propertiesonly" class="tsd-kind-icon">Properties<wbr>Only</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#propertynamesonly" class="tsd-kind-icon">Property<wbr>Names<wbr>Only</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#typesaveproperty" class="tsd-kind-icon">Type<wbr>Save<wbr>Property</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#weaken" class="tsd-kind-icon">Weaken</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
 					<a name="extendableenumtype" class="tsd-anchor"></a>
@@ -106,6 +115,121 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/ExtendableEnum.ts#L1">ExtendableEnum.ts:1</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="functionnamesonly" class="tsd-anchor"></a>
+					<h3>Function<wbr>Names<wbr>Only</h3>
+					<div class="tsd-signature tsd-kind-icon">Function<wbr>Names<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof T]: T[K] extends Function ? K : never; }[keyof T]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L4">types.ts:4</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="functionsonly" class="tsd-anchor"></a>
+					<h3>Functions<wbr>Only</h3>
+					<div class="tsd-signature tsd-kind-icon">Functions<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#functionnamesonly" class="tsd-signature-type">FunctionNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L5">types.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="nestedobject" class="tsd-anchor"></a>
+					<h3>Nested<wbr>Object</h3>
+					<div class="tsd-signature tsd-kind-icon">Nested<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L13">types.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="nestedobjectchild" class="tsd-anchor"></a>
+					<h3>Nested<wbr>Object<wbr>Child</h3>
+					<div class="tsd-signature tsd-kind-icon">Nested<wbr>Object<wbr>Child<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L14">types.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="nestedpartialobject" class="tsd-anchor"></a>
+					<h3>Nested<wbr>Partial<wbr>Object</h3>
+					<div class="tsd-signature tsd-kind-icon">Nested<wbr>Partial<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L11">types.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="propertiesonly" class="tsd-anchor"></a>
+					<h3>Properties<wbr>Only</h3>
+					<div class="tsd-signature tsd-kind-icon">Properties<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#propertynamesonly" class="tsd-signature-type">PropertyNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L8">types.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="propertynamesonly" class="tsd-anchor"></a>
+					<h3>Property<wbr>Names<wbr>Only</h3>
+					<div class="tsd-signature tsd-kind-icon">Property<wbr>Names<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof T]: T[K] extends Function ? never : K; }[keyof T]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L7">types.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="typesaveproperty" class="tsd-anchor"></a>
+					<h3>Type<wbr>Save<wbr>Property</h3>
+					<div class="tsd-signature tsd-kind-icon">Type<wbr>Save<wbr>Property<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L2">types.ts:2</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="weaken" class="tsd-anchor"></a>
+					<h3>Weaken</h3>
+					<div class="tsd-signature tsd-kind-icon">Weaken<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/e1131e2/src/types.ts#L17">types.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -146,6 +270,33 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
 						<a href="globals.html#extendableenumtype" class="tsd-kind-icon">Extendable<wbr>Enum<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#functionnamesonly" class="tsd-kind-icon">Function<wbr>Names<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#functionsonly" class="tsd-kind-icon">Functions<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#nestedobject" class="tsd-kind-icon">Nested<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#nestedobjectchild" class="tsd-kind-icon">Nested<wbr>Object<wbr>Child</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#nestedpartialobject" class="tsd-kind-icon">Nested<wbr>Partial<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#propertiesonly" class="tsd-kind-icon">Properties<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#propertynamesonly" class="tsd-kind-icon">Property<wbr>Names<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#typesaveproperty" class="tsd-kind-icon">Type<wbr>Save<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#weaken" class="tsd-kind-icon">Weaken</a>
 					</li>
 				</ul>
 			</nav>
