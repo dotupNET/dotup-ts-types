@@ -5,4 +5,4 @@ export * from './ObjectTools';
 export * from './StringTools';
 export * from './types';
 export * from './Interfaces';
-export * from './IPlugin';
+// export * from './IPlugin';
