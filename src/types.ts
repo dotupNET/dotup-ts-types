@@ -8,10 +8,18 @@ export declare type PropertyNamesOnly<T> = { [K in keyof T]: T[K] extends Functi
 export declare type PropertiesOnly<T> = Pick<T, PropertyNamesOnly<T>>;
 
 // tslint:disable-next-line: max-line-length
-export declare type NestedPartialObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]?: NestedObjectChild<TChild, TContent> };
-// tslint:disable-next-line: max-line-length
-export declare type NestedObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]: NestedObjectChild<TChild, TContent> };
-export declare type NestedObjectChild<T extends string, TContent> = { [P in T]: TContent };
+// export declare type NestedPartialObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]?: NestedObjectChild<TChild, TContent> };
+// // tslint:disable-next-line: max-line-length
+// export declare type NestedObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]: NestedObjectChild<TChild, TContent> };
+// export declare type NestedObjectChild<T extends string, TContent> = { [P in T]: TContent };
+
+export declare type Nested<T extends string, TContent> = {
+  [P in T]: TContent;
+};
+
+export declare type PartialNested<T extends string, TContent> = {
+  [P in T]?: TContent;
+};
 
 // tslint:disable-next-line: no-any
 export type Weaken<T, K extends keyof T> = { [P in keyof T]: P extends K ? any : T[P]; };
