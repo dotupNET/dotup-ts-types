@@ -9,7 +9,7 @@ export declare type PropertiesOnly<T> = Pick<T, PropertyNamesOnly<T>>;
 
 // tslint:disable-next-line: max-line-length
 // export declare type NestedPartialObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]?: NestedObjectChild<TChild, TContent> };
-// // tslint:disable-next-line: max-line-length
+// tslint:disable-next-line: max-line-length
 // export declare type NestedObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]: NestedObjectChild<TChild, TContent> };
 // export declare type NestedObjectChild<T extends string, TContent> = { [P in T]: TContent };
 
