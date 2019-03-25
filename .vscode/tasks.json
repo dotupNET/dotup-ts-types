@@ -71,6 +71,13 @@
       "problemMatcher": [
         "$tslint5"
       ]
+    },
+    {
+      "type": "gulp",
+      "task": "project-build",
+      "problemMatcher": [
+        "$tsc"
+      ]
     }
   ]
 }
