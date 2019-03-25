@@ -13,6 +13,14 @@ export declare type PropertiesOnly<T> = Pick<T, PropertyNamesOnly<T>>;
 // export declare type NestedObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]: NestedObjectChild<TChild, TContent> };
 // export declare type NestedObjectChild<T extends string, TContent> = { [P in T]: TContent };
 
+/**
+* The MockOf type takes a class and an optional union of public members which 
+* should be excluded in our mock.
+*/
+type MockOf<Class, Omit extends keyof Class = never> = {
+  [Member in Exclude<keyof Class, Omit>]: Class[Member];
+}
+
 export declare type Nested<T extends string, TContent> = {
   [P in T]: TContent;
 };
