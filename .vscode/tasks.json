@@ -35,41 +35,13 @@
         "${file}"
       ],
       "group": "test",
-      "problemMatcher": "$jasmine"
-    },
-    {
-      "type": "grunt",
-      "task": "tslint",
-      "problemMatcher": [
-        "$tslint5"
-      ]
+      "problemMatcher": "$tsc"
     },
     {
       "type": "npm",
       "script": "release",
       "problemMatcher": [
         "$tsc"
-      ]
-    },
-    {
-      "type": "grunt",
-      "task": "release",
-      "problemMatcher": [
-        "$tslint5"
-      ]
-    },
-    {
-      "type": "grunt",
-      "task": "publish",
-      "problemMatcher": [
-        "$tsc"
-      ]
-    },
-    {
-      "type": "grunt",
-      "task": "build",
-      "problemMatcher": [
-        "$tslint5"
       ]
     },
     {

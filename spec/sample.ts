@@ -1,6 +1,9 @@
 // import { Properties } from '../src/Properties';
 // tslint:disable-next-line:no-import-side-effect
 import { StringTools } from '../src/StringTools';
+import { WithStringTag } from './StringTagClass'; 
+import { ObjectTools } from '../src/ObjectTools';
+
 export class Sample {
 
   run(): void {
@@ -48,7 +51,14 @@ export class Sample {
 
   }
 
+  runStringTag(){
+    const a = new WithStringTag();
+    const b = new WithStringTag();
+
+   const result = ObjectTools.isInstanceOf(a, WithStringTag);
+   
+  }
 }
 
 const sample = new Sample();
-sample.run();
+sample.runStringTag();

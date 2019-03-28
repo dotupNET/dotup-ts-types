@@ -1,4 +1,5 @@
 import { ObjectTools } from '../src/ObjectTools';
+import { WithStringTag } from './StringTagClass';
 
 class BaseClass {
   basprop: string;
@@ -36,6 +37,13 @@ describe('ObjectTools', () => {
     expect(names[1])
       .toBe('A');
 
+  });
+
+  it('isInstanceOf', () => {
+    const a = new WithStringTag();
+
+    const result = ObjectTools.isInstanceOf(a, WithStringTag);
+    expect(result).toBeTruthy();
   });
 
   it('GetOwnMethodNames', () => {

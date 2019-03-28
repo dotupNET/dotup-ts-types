@@ -1,6 +1,20 @@
 // tslint:disable:no-any
 export namespace ObjectTools {
 
+  /**
+   * The classes must use the toStringTag symbol.
+   */
+  export function isInstanceOf<T>(value: any, instanceOf: { new(): any }): boolean {
+    if (typeof value !== 'object') {
+      return false;
+    } else if ((<any>instanceOf).name !== value.constructor.name) {
+      return false;
+    } else if (new instanceOf()[Symbol.toStringTag] === value[Symbol.toStringTag]) {
+      return true;
+    }
+    return false;
+  }
+
   // Adds the element at a specific position inside the linked list
   export function GetMethodNames(obj: any, ...excluded: string[]): string[] {
     const skip: string[] = excluded || [];
