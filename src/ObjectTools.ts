@@ -4,7 +4,7 @@ export namespace ObjectTools {
   /**
    * The classes must use the toStringTag symbol.
    */
-  export function isInstanceOf<T>(value: any, instanceOf: { new(): any }): boolean {
+  export function isInstanceOf<T>(value: any, instanceOf: { new(): any }): value is T {
     if (typeof value !== 'object') {
       return false;
     } else if ((<any>instanceOf).name !== value.constructor.name) {
