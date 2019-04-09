@@ -1,8 +1,10 @@
-export * from './ExtendableEnum';
 export * from './ArrayTools';
+export * from './ExtendableEnum';
+export * from './Interfaces';
 export * from './NamedList';
 export * from './ObjectTools';
+export * from './PromiseTools';
+export * from './RegexTools';
 export * from './StringTools';
 export * from './types';
-export * from './Interfaces';
 // export * from './IPlugin';
