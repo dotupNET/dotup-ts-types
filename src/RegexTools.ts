@@ -1,4 +1,5 @@
 import { IUrl } from './Interfaces';
+import { ObjectTools } from './ObjectTools';
 
 export function parseUrl(url: string): IUrl {
   // tslint:disable-next-line: max-line-length
@@ -35,9 +36,9 @@ export function replace(text: string, ...args: any[]): string {
   if (args.length) {
     const t = typeof args[0];
     var key;
-    var values: any = ("string" === t || "number" === t) ?
-      Array.prototype.slice.call(args)
-      : args[0];
+    var values: any = (t === 'string' || t === 'number') ?
+      Array.prototype.slice.call(args) :
+      args[0];
 
     for (key in values) {
       result = result.replace(new RegExp("\\{" + key + "\\}", "gi"), values[key]);
@@ -47,3 +48,30 @@ export function replace(text: string, ...args: any[]): string {
   return result;
 };
 
+/**
+ * Replace placeholder in text with args
+ *
+ * Indexed:
+ * const str = RegexTools.replacePath('{1} {0}', 'tool', 'Nice'};
+ *
+ * With Object:
+ * const str = RegexTools.replacePath('{a} {b.1}', {b: {1:'tool'}, a: 'Nice'}};
+ *
+ */
+export function replacePath(text: string, ...args: any[]): string {
+  let result = text;
+
+  if (args.length) {
+    const t = typeof args[0];
+    var key;
+    var values: any = (t === 'string' || t === 'number') ?
+      Array.prototype.slice.call(args) :
+      args[0];
+
+    for (key in values) {
+      result = result.replace(new RegExp("\\{" + key + "\\}", "gi"), ObjectTools.get(values, key));
+    }
+  }
+
+  return result;
+};

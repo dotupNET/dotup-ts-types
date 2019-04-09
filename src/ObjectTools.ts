@@ -1,6 +1,23 @@
 // tslint:disable:no-any
 export namespace ObjectTools {
 
+  export function get<T>(obj: object, path: string): T {
+    const props = path.split('.');
+    if (props.length > 1) {
+      let o = (<any>obj)[props[0]];
+      return <any>props.reduce((p, c) => {
+        if (o === undefined || o[c] === undefined) {
+          o = undefined;
+          return undefined;
+        }
+        o = o[c];
+        return o;
+      });
+    } else {
+      return (<any>obj)[path];
+    }
+  }
+
   /**
    * The classes must use the toStringTag symbol.
    */

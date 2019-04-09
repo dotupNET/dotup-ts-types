@@ -1,6 +1,10 @@
 import { ObjectTools } from '../src/ObjectTools';
 import { WithStringTag } from './StringTagClass';
 
+class SubClass {
+  prop1: string = 'ValueOfProp1'
+}
+
 class BaseClass {
   basprop: string;
   async Stop() {
@@ -9,6 +13,9 @@ class BaseClass {
 }
 
 class MyClass extends BaseClass {
+  z: string = 'valueOfZ';
+
+  subClass: SubClass = new SubClass();
 
   private x: string = 'x';
 
@@ -36,6 +43,20 @@ describe('ObjectTools', () => {
 
     expect(names[1])
       .toBe('A');
+
+  });
+
+  it('GetByPath', () => {
+    const myClass = new MyClass();
+
+    const value = ObjectTools.get(myClass, 'z');
+    expect(value).toBe('valueOfZ');
+
+    const deepValue = ObjectTools.get(myClass, 'subClass.prop1');
+    expect(deepValue).toBe('ValueOfProp1');
+
+    const deepValueUNdef = ObjectTools.get(myClass, 'subClass.de.prop1');
+    expect(deepValueUNdef).toBe(undefined);
 
   });
 
