@@ -1,4 +1,8 @@
 // tslint:disable-next-line:interface-name
+export interface ITypedProperty<T> {
+  [key: string]: T;
+}
+
 export interface KeyValuePair<TKey, TValue> {
   key: TKey;
   value: TValue;
