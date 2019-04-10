@@ -35,12 +35,30 @@ class MyClass extends BaseClass {
 
 describe('RegexTools', () => {
 
-  it('replacePath', () => {
+  it('replacePath without placeholder', () => {
+    const myClass = new MyClass();
+
+    const source = 'my text without placeholder';
+    const target = replacePath(source, myClass);
+    expect(target).toBe('my text without placeholder');
+
+  });
+
+  it('replacePath with one placeholder', () => {
     const myClass = new MyClass();
 
     const source = 'my text with {subClass.prop1}';
     const target = replacePath(source, myClass);
     expect(target).toBe('my text with ValueOfProp1');
+
+  });
+
+  it('replacePath with two placeholder', () => {
+    const myClass = new MyClass();
+
+    const source = 'my text with {subClass.prop1} and {z}';
+    const target = replacePath(source, myClass);
+    expect(target).toBe('my text with ValueOfProp1 and valueOfZ');
 
   });
 

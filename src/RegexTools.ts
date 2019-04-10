@@ -55,16 +55,24 @@ export function replace(text: string, ...args: any[]): string {
  * const str = RegexTools.replacePath('{a} {b.1}', {b: {1:'tool'}, a: 'Nice'}};
  *
  */
-export function replacePath(text: string, ...args: any[]): string {
+export function replacePath(text: string, values: object): string {
+
+  if (text === undefined || values === undefined) {
+    return text;
+  }
+
+  const regex = /{(?:[^}]+)}/g;
   let result = text;
+  let m: RegExpExecArray;
 
-  if (args.length) {
-    var values: any = args[0];
+  while ((m = regex.exec(text)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
 
-    // const x = /\{(.*?)\}/.exec(text);
-    const x = /(?<=\{).+?(?=\})/.exec(text);
-    x.forEach((match) => {
-      result = result.replace(`{${match}}`, ObjectTools.get(values, match));
+    m.forEach(match => {
+      result = result.replace(match, ObjectTools.get(values, match.substring(1, match.length - 1)));
     });
   }
 
