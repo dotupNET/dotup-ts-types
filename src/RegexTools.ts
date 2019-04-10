@@ -61,7 +61,7 @@ export function replacePath(text: string, values: object): string {
     return text;
   }
 
-  const regex = /{(?:[^}]+)}/g;
+  const regex = /\{(?:[^{}]+)\}/g;
   let result = text;
   let m: RegExpExecArray;
 
