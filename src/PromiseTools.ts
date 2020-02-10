@@ -39,3 +39,11 @@ export async function timeoutPromise<T>(timeout: number, promise: Promise<T>): P
     p
   ]);
 }
+
+export function Async<T>(action: () => Promise<T>, onrejected?: ((reason: any) => void | PromiseLike<void>) | null | undefined): void {
+  action()
+    .catch(e => {
+      if (onrejected) onrejected(e);
+      console.log(e);
+    });
+}
