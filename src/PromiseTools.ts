@@ -1,5 +1,6 @@
 // tslint:disable-next-line: no-require-imports
 import { EventEmitter } from 'events';
+import { AsyncCallbackFunction } from "./types";
 
 export async function sleep(ms: number): Promise<void> {
   // tslint:disable-next-line: no-string-based-set-timeout
@@ -46,4 +47,17 @@ export function Async<T>(action: () => Promise<T>, onrejected?: ((reason: any) =
       if (onrejected) onrejected(e);
       console.log(e);
     });
+}
+
+
+export async function AsyncCallback<TResult, TArg>(arg: TArg, action: AsyncCallbackFunction<TResult, TArg>): Promise<TResult> {
+  return new Promise((resolve, reject) => {
+    action(arg, (err: Error, val: TResult) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(val);
+      }
+    });
+  })
 }
