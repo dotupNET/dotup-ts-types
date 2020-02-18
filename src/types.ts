@@ -1,4 +1,5 @@
-export declare type AsyncCallbackFunction<TResult, TArg> = (arg: TArg, callback: (err: Error | null, buf: TResult) => void) => void;
+export declare type AsyncCallbackFunction1<TResult, TArg> = (arg: TArg, callback: (err: Error | null, buf: TResult) => void) => void;
+export declare type AsyncCallbackFunction2<TResult, TArg1, TArg2> = (arg1: TArg1, arg2: TArg2, callback: (err: Error | null, buf: TResult) => void) => void;
 
 export declare type TypeSaveProperty<T> = { [K in keyof T]: T[K]; };
 
