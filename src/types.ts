@@ -1,5 +1,5 @@
-export declare type AsyncCallbackFunction1<TResult, TArg> = (arg: TArg, callback: (err: Error | null, buf: TResult) => void) => void;
-export declare type AsyncCallbackFunction2<TResult, TArg1, TArg2> = (arg1: TArg1, arg2: TArg2, callback: (err: Error | null, buf: TResult) => void) => void;
+export declare type AsyncCallbackFunction1<TResult, TArg> = (arg: TArg, callback: (err: Error, buf: TResult) => void) => void;
+export declare type AsyncCallbackFunction2<TResult, TArg1, TArg2> = (arg1: TArg1, arg2: TArg2, callback: (err: Error, buf: TResult) => void) => void;
 
 export declare type TypeSaveProperty<T> = { [K in keyof T]: T[K]; };
 
@@ -9,9 +9,7 @@ export declare type FunctionsOnly<T> = Pick<T, FunctionNamesOnly<T>>;
 export declare type PropertyNamesOnly<T> = { [K in keyof T]: T[K] extends Function ? never : K }[keyof T];
 export declare type PropertiesOnly<T> = Pick<T, PropertyNamesOnly<T>>;
 
-// tslint:disable-next-line: max-line-length
 // export declare type NestedPartialObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]?: NestedObjectChild<TChild, TContent> };
-// tslint:disable-next-line: max-line-length
 // export declare type NestedObject<TParent extends string, TChild extends string, TContent> = { [P in TParent]: NestedObjectChild<TChild, TContent> };
 // export declare type NestedObjectChild<T extends string, TContent> = { [P in T]: TContent };
 
@@ -31,8 +29,7 @@ export declare type PartialNested<T extends string, TContent> = {
   [P in T]?: TContent;
 };
 
-// tslint:disable-next-line: no-any
-export type Weaken<T, K extends keyof T> = { [P in keyof T]: P extends K ? any : T[P]; };
+export type Weaken<T, K extends keyof T> = { [P in keyof T]: P extends K ? unknown : T[P]; };
 
 // ```ts
 // type Weaken<T, K extends keyof T> = {

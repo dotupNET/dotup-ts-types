@@ -57,6 +57,16 @@
       "problemMatcher": [
         "$tsc"
       ]
+    },
+    {
+      "type": "gulp",
+      "task": "es-lint",
+      "problemMatcher": []
+    },
+    {
+      "type": "gulp",
+      "task": "npm-publish",
+      "problemMatcher": []
     }
   ]
 }

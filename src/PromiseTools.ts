@@ -1,19 +1,17 @@
-// tslint:disable-next-line: no-require-imports
-import { EventEmitter } from 'events';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { EventEmitter } from "events";
 import { AsyncCallbackFunction1, AsyncCallbackFunction2 } from "./types";
 
 export async function sleep(ms: number): Promise<void> {
-  // tslint:disable-next-line: no-string-based-set-timeout
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function Event<T>(emitter: EventEmitter, event: string, timeout?: number): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
-    emitter.on(event, _ => resolve());
+export async function Event<T>(emitter: EventEmitter, event: string): Promise<T> {
+  return new Promise<T>((resolve) => {
+    emitter.on(event, () => resolve());
   });
 }
 
-// tslint:disable-next-line: max-line-length : no-any
 export async function timeoutAfter<T>(timeout: number, executor: (resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void): Promise<T> {
   const p = new Promise<T>((resolve, reject) =>
     setTimeout(
@@ -67,9 +65,12 @@ export async function AsyncCallback<TResult, TArg1, TArg2>(arg1: TArg1, arg2?: T
     });
   } else {
     // Action(arg1, arg2)
+    if (action === undefined) {
+      throw new Error("action === undefined");
+    }
     return new Promise((resolve, reject) => {
       // ?? why as any? it's checked with is function above..
-      action(arg1, arg2 as any, (err: Error, val: TResult) => {
+      action(arg1, arg2 as any, (err: Error, val: TResult): void => {
         if (err) {
           reject(err);
         } else {

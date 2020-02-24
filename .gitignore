@@ -1,11 +1,13 @@
 secrets/
-
+tsconfig.tsbuildinfo
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.yo-rc.json
 
 # Runtime data
 pids

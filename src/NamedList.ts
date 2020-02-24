@@ -8,7 +8,7 @@ export class NamedList<T> {
 
   constructor(listName: string, uniqueField?: keyof T) {
     this.Name = listName;
-    this.UniqueField = uniqueField;
+    this.UniqueField = uniqueField as keyof T;
     this.Items = [];
   }
 
@@ -33,14 +33,12 @@ export class NamedList<T> {
     return this.Items.indexOf(item) > -1;
   }
 
-  GetRandomItem(): T {
-    let result: T;
+  GetRandomItem(): T | undefined {
     if (Array.isArray(this.Items)) {
-      // tslint:disable-next-line:insecure-random
-      result = this.Items[Math.floor(Math.random() * this.Items.length)];
+      return this.Items[Math.floor(Math.random() * this.Items.length)];
+    } else{
+      return undefined;
     }
-
-    return result;
   }
 
   HasItems(): boolean {
@@ -51,7 +49,7 @@ export class NamedList<T> {
     if (!value || !propertyName) {
       return false;
     }
-    const index = this.Items.findIndex((item: T, itemIndex: number) => {
+    const index = this.Items.findIndex((item: T) => {
       if (item[propertyName] === value) {
         return true;
       } else {
@@ -62,16 +60,16 @@ export class NamedList<T> {
     return index > -1;
   }
 
-  GetItem(predicate: (item: T) => boolean): T {
+  GetItem(predicate: (item: T) => boolean): T | undefined {
     return this.Items.find(predicate);
   }
 
-  FindBy(value: T[keyof T], propertyName: keyof T = this.UniqueField): T {
+  FindBy(value: T[keyof T], propertyName: keyof T = this.UniqueField): T | undefined{
     if (!value || !propertyName) {
       return undefined;
     }
 
-    return this.Items.find((item: T, itemIndex: number) => {
+    return this.Items.find((item: T) => {
       if (item[propertyName] === value) {
         return true;
       } else {
@@ -81,12 +79,12 @@ export class NamedList<T> {
 
   }
 
-  Find(value: T): T {
+  Find(value: T): T | undefined{
     if (!value) {
       return undefined;
     }
 
-    return this.Items.find((item: T, itemIndex: number) => {
+    return this.Items.find((item: T) => {
       if (item === value) {
         return true;
       } else {

@@ -1,9 +1,9 @@
-// tslint:disable:no-any
+/* eslint-disable @typescript-eslint/no-namespace */
 export namespace ArrayTools {
 
   // Adds the element at a specific position inside the linked list
   export function insert<T>(arr: T[], val: T | T[], previousItem?: T): void {
-    const indexOfParent = arr.indexOf(previousItem);
+    const indexOfParent = previousItem === undefined ? -1 : arr.indexOf(previousItem);
 
     if (val instanceof Array) {
       // Array
@@ -29,9 +29,6 @@ export namespace ArrayTools {
     return value === undefined ? [] : [value];
   }
 
-  // tslint:disable:no-increment-decrement
-  // tslint:disable:insecure-random
-  // tslint:disable-next-line:no-any
   export function shuffle<T>(array: T[]): T[] {
     let counter = array.length;
 
@@ -52,6 +49,7 @@ export namespace ArrayTools {
     return array;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export function getUniqueRandomKeys(array: any[], count: number): string[] {
     const f = Object.getOwnPropertyNames(array);
     const result: string[] = [];

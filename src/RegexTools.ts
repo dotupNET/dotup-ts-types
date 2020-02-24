@@ -1,9 +1,12 @@
-import { IUrl } from './Interfaces';
-import { ObjectTools } from './ObjectTools';
+import { IUrl } from "./Interfaces";
+import { ObjectTools } from "./ObjectTools";
 
 export function parseUrl(url: string): IUrl {
-  // tslint:disable-next-line: max-line-length
   const parts = /(?:(?:(([^:\/#\?]+:)?(?:(?:\/\/)(?:(?:(?:([^:@\/#\?]+)(?:\:([^:@\/#\?]*))?)@)?(([^:\/#\?\]\[]+|\[[^\/\]@#?]+\])(?:\:([0-9]+))?))?)?)?((?:\/?(?:[^\/\?#]+\/+)*)(?:[^\?#]*)))?(\?[^#]+)?)(#.*)?/.exec(url);
+
+  if (!parts) {
+    return {} as IUrl;
+  }
 
   return {
     href: parts[0],
@@ -30,13 +33,15 @@ export function parseUrl(url: string): IUrl {
  * const str = RegexTools.replace('{a} {b}', {b: 'tool', a: 'Nice'}};
  *
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function replace(text: string, ...args: any[]): string {
   let result = text;
 
   if (args.length) {
     const t = typeof args[0];
-    var key;
-    var values: any = (t === 'string' || t === 'number') ?
+    let key;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const values: any = (t === "string" || t === "number") ?
       Array.prototype.slice.call(args) :
       args[0];
 
@@ -63,7 +68,7 @@ export function replacePath(text: string, values: object): string {
 
   const regex = /\{(?:[^{}]+)\}/g;
   let result = text;
-  let m: RegExpExecArray;
+  let m: RegExpExecArray | null;
 
   while ((m = regex.exec(text)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches

@@ -1,14 +1,14 @@
-// tslint:disable
+/* eslint-disable @typescript-eslint/no-namespace */
+export namespace StringTools {
 
-export module StringTools {
-
-  export function format(text: string, ...args: any[]): string {
+  export function format(text: string, ...args: unknown[]): string {
     let result = text;
 
     if (args.length) {
       const t = typeof args[0];
-      var key;
-      var values: any = ("string" === t || "number" === t) ?
+      let key;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const values: any = ("string" === t || "number" === t) ?
         Array.prototype.slice.call(args)
         : args[0];
 

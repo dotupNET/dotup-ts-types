@@ -1,8 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type ExtendableEnumType<T extends string> = { [K in T]: K };
 
-// tslint:disable:no-any
-// tslint:disable:prefer-type-cast
-// tslint:disable:no-object-literal-type-assertion
 export class ExtendableEnum {
 
   private readonly enumeration: any;
@@ -23,7 +21,7 @@ export class ExtendableEnum {
   static Extend<T extends string, U extends string>(
     firstEnum: ExtendableEnumType<T>, ...vals: U[]): ExtendableEnumType<T | U> {
 
-      return Object.assign(this.Create(...vals), firstEnum) as any;
+    return Object.assign(this.Create(...vals), firstEnum) as any;
   }
 
 }

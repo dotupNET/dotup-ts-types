@@ -1,32 +1,92 @@
-'use strict';
+/* eslint-disable @typescript-eslint/no-var-requires */
+"use strict";
+//const skill = require('./secrets/skill.config.json');
+const BuildMode = require("./tools/gulp/gulpBuildMode");
 
 class GulpConfig {
 
-  constructor() {
 
+  Paths = {
     // source
-    this.sourcePath = 'src';
-    this.tsSourceFiles = this.sourcePath + '/**/*.ts';
+    sourcePath: "src",
 
     // test
-    this.testPath = 'spec';
-    this.testFiles = `${this.testPath}/**/*.ts`;
+    testPath: "src",
 
     // target
-    this.targetPath = 'dist';
+    targetPath: "dist",
 
     // docs
-    this.docsPath = 'docs';
-    this.docsFiles = this.docsPath + '/**/*';
+    docsPath: "docs"
+  };
 
-    // Static files
-    this.statics = [
-      {
-        sourcePath: `${this.sourcePath}/assets/**`,
-        targetPath: `${this.targetPath}/assets`
-      }
-    ];
-  }
+  buildMode = null;
 
+  setBuildMode = (value) => {
+    this.buildMode = value;
+    if (value === BuildMode.dev) {
+      this.tsConfigFile = "tsconfig.json";
+    } else {
+      this.tsConfigFile = "tsconfig.build.json";
+    }
+    return this.buildMode;
+  };
+
+  // GulpConfig = {
+
+  // buildMode: this.buildMode,
+
+  tsConfigFile = "";
+
+  // Root path
+  rootPath = __dirname;
+
+  // source
+  sourcePath = this.Paths.sourcePath;
+
+  tsSourceFiles = this.Paths.sourcePath + "/**/*.ts";
+
+  // test
+  testPath = this.Paths.testPath;
+  testFiles = `${this.Paths.testPath}/**/*.ts`;
+
+  // target
+  targetPath = this.Paths.targetPath;
+
+  // docs
+  docsPath = this.Paths.docsPath;
+
+  docsFiles = this.Paths.docsPath + "/**/*";
+
+  // Static files
+  statics = [
+    {
+      sourcePath: `${this.Paths.sourcePath}/assets/**`,
+      targetPath: `${this.Paths.targetPath}/assets`
+    }
+  ];
+
+  npmLink = [
+    // {
+    //   name: 'module-name1',
+    //   path: '../'
+    // },
+    // {
+    //   name: 'module-name2',
+    //   path: '../'
+    // }
+  ];
+  // lambda: [
+  //   {
+  //     sourcePath: `${Paths.targetPath}/skill`,
+  //     targetFile: `${Paths.targetPath}/lambda.zip`,
+  //     params: {
+  //       FunctionName: skill.functionArn,
+  //       Publish: false
+  //     }
+  //   }
+  // ]
 }
-module.exports = GulpConfig;
+
+const config = new GulpConfig();
+module.exports = config;

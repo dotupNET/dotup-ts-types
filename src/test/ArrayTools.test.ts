@@ -1,50 +1,52 @@
-// tslint:disable:no-any
-import { ArrayTools } from '../src/ArrayTools';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { expect } from "chai";
+import { ArrayTools } from "../ArrayTools";
+import "mocha";
 
-describe('ArrayTools', () => {
+describe("ArrayTools", () => {
 
-  it('should get keys of 3 elements from array', () => {
+  it("should get keys of 3 elements from array", () => {
     const arr: any[] = [];
 
     arr.push(1);
-    arr.push('2');
-    arr.push({ item: 'value' });
-    arr.push('4');
-    arr.push('5');
+    arr.push("2");
+    arr.push({ item: "value" });
+    arr.push("4");
+    arr.push("5");
 
     const keys = ArrayTools.getUniqueRandomKeys(arr, 2);
 
     expect(keys.length)
-      .toBe(2);
+      .to.equal(2);
 
     keys.forEach(key => {
-      expect(arr[<any>key])
-        .toBeTruthy();
+      expect(arr[key as any])
+        .to.be.not.undefined;
     });
   });
 
-  it('should get values of 3 elements from array', () => {
+  it("should get values of 3 elements from array", () => {
     const arr: any[] = [];
 
     arr.push(1);
-    arr.push('2');
-    arr.push({ item: 'value' });
-    arr.push('4');
-    arr.push('5');
+    arr.push("2");
+    arr.push({ item: "value" });
+    arr.push("4");
+    arr.push("5");
 
     const values = ArrayTools.getUniqueRandomValues(arr, 2);
 
     expect(values.length)
-      .toBe(2);
+      .to.equal(2);
 
     values.forEach(value => {
       expect(arr.indexOf(value) > -1)
-        .toBeTruthy();
+        .to.be.true;
     });
   });
 
-  it('should insert between 1 and 3', () => {
-    const arr: Number[] = [];
+  it("should insert between 1 and 3", () => {
+    const arr: number[] = [];
 
     arr.push(1);
     arr.push(2);
@@ -53,11 +55,11 @@ describe('ArrayTools', () => {
     ArrayTools.insert(arr, 11, 1);
 
     expect(arr[1])
-      .toBe(11);
+      .to.equal(11);
   });
 
-  it('should shoufle array', () => {
-    const arr: Number[] = [];
+  it("should shoufle array", () => {
+    const arr: number[] = [];
 
     arr.push(1);
     arr.push(2);
@@ -68,39 +70,39 @@ describe('ArrayTools', () => {
     const shuffled = ArrayTools.shuffle(arr);
 
     expect(shuffled.length)
-      .toBe(arr.length);
+      .to.equal(arr.length);
 
     shuffled.forEach(item => {
       expect(arr.indexOf(item) > -1)
-        .toBeTruthy();
+        .to.be.true;
 
     });
   });
 
 
-  it('should return array', () => {
-    const arr: Number[] = [1, 2, 3];
+  it("should return array", () => {
+    const arr: number[] = [1, 2, 3];
 
     const withArray = ArrayTools.getArray(arr);
 
     expect(withArray.length)
-      .toBe(arr.length);
+      .to.equal(arr.length);
 
     expect(withArray[0])
-      .toBe(1);
+      .to.equal(1);
 
     const withNumber = ArrayTools.getArray(7);
 
     expect(withNumber.length)
-      .toBe(1);
+      .to.equal(1);
 
     expect(withNumber[0])
-      .toBe(7);
+      .to.equal(7);
 
     const withUndefined = ArrayTools.getArray(undefined);
 
     expect(withUndefined.length)
-      .toBe(0);
+      .to.equal(0);
 
   });
 

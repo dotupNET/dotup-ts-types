@@ -23,3 +23,8 @@ gulpfile.js
 tslint.json
 gulpfile.config.js
 .yo-rc.json
+tsconfig*
+copyStaticAssets.ts
+rollup.config.js
+.mocharc.json
+.eslint*

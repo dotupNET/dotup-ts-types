@@ -1,11 +1,12 @@
-// tslint:disable:no-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-namespace */
 export namespace ObjectTools {
 
   export function get<T>(obj: object, path: string): T {
-    const props = path.split('.');
+    const props = path.split(".");
     if (props.length > 1) {
-      let o = (<any>obj)[props[0]];
-      return <any>props.reduce((p, c) => {
+      let o = (obj as any)[props[0]];
+      return (props as any).reduce((p: any, c: any) => {
         if (o === undefined || o[c] === undefined) {
           o = undefined;
           return undefined;
@@ -14,7 +15,7 @@ export namespace ObjectTools {
         return o;
       });
     } else {
-      return (<any>obj)[path];
+      return (obj as any)[path];
     }
   }
 
@@ -22,9 +23,9 @@ export namespace ObjectTools {
    * The classes must use the toStringTag symbol.
    */
   export function isInstanceOf<T>(value: any, instanceOf: { new(): any }): value is T {
-    if (typeof value !== 'object') {
+    if (typeof value !== "object") {
       return false;
-    } else if ((<any>instanceOf).name !== value.constructor.name) {
+    } else if ((instanceOf as any).name !== value.constructor.name) {
       return false;
     } else if (new instanceOf()[Symbol.toStringTag] === value[Symbol.toStringTag]) {
       return true;
@@ -36,17 +37,16 @@ export namespace ObjectTools {
   export function GetMethodNames(obj: any, ...excluded: string[]): string[] {
     const skip: string[] = excluded || [];
     const methods: string[] = [];
-    skip.push('constructor');
+    skip.push("constructor");
     let item = obj;
 
-    // tslint:disable-next-line:no-conditional-assignment
     while (item = Reflect.getPrototypeOf(item)) {
 
       const keys = Reflect.ownKeys(item);
       if (item instanceof Object) {
         keys.forEach((k) => {
-          if (skip.indexOf(<string>k) < 0) {
-            methods.push(<string>k);
+          if (skip.indexOf(k as string) < 0) {
+            methods.push(k as string);
           }
         });
       }
@@ -55,17 +55,24 @@ export namespace ObjectTools {
     return methods;
   }
 
-  export function GetOwnMethodNames(instance: any, ...excluded: string[]): string[] {
+
+  function hasMethod<T>(obj: T, name: string): boolean {
+    const desc = Object.getOwnPropertyDescriptor(obj, name);
+
+    return !!desc && typeof desc.value === "function";
+  }
+
+  export function GetOwnMethodNames<T>(instance: any, ...excluded: string[]): string[] {
     const skip: string[] = excluded || [];
     const methods: string[] = [];
-    skip.push('constructor');
+    skip.push("constructor");
 
     const obj = Reflect.getPrototypeOf(instance);
     const keys = Reflect.ownKeys(obj);
     if (obj instanceof Object) {
       keys.forEach((k) => {
-        if (hasMethod(obj, k.toString()) && skip.indexOf(<string>k) < 0) {
-          methods.push(<string>k);
+        if (hasMethod(obj, k.toString()) && skip.indexOf(k as string) < 0) {
+          methods.push(k as string);
         }
       });
     }
@@ -73,16 +80,10 @@ export namespace ObjectTools {
     return methods;
   }
 
-  function hasMethod(obj: any, name: string): boolean {
-    const desc = Object.getOwnPropertyDescriptor(obj, name);
-
-    return !!desc && typeof desc.value === 'function';
-  }
-
   export function CopyEachSource<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
     Object.keys(source)
       .forEach(item => {
-        (<any>target)[item] = (<any>source)[item];
+        (target as any)[item] = (source as any)[item];
       });
 
     return target;
@@ -91,15 +92,15 @@ export namespace ObjectTools {
   export function CopyEachTarget<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
     Object.keys(target)
       .forEach(item => {
-        (<any>target)[item] = (<any>source)[item];
+        (target as any)[item] = (source as any)[item];
       });
 
     return target;
   }
 
   export function DeepMerge<T>(source: Partial<T>, target: Partial<T>) {
-    const s = <any>source;
-    const t = <any>target;
+    const s = source as any;
+    const t = target as any;
 
     Object
       .keys(s)

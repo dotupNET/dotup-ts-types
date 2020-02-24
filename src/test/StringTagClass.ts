@@ -1,6 +1,6 @@
 export class WithStringTag {
   get [Symbol.toStringTag]() {
-    return 'WithStringTag';
+    return "WithStringTag";
   }
 
   a: string;
