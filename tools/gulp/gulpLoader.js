@@ -4,7 +4,6 @@ const
   fs = require("fs"),
   path = require("path"),
   gulp = require("gulp"),
-  taskEnabled = require("./gulp.json"),
   config = require("../../gulpfile.config")
   ;
 
@@ -91,7 +90,7 @@ class GulpLoader {
   loadAllFiles() {
     const gulpFiles = fs.readdirSync("./tools/gulp").filter(file => path.extname(file) === ".js");
     gulpFiles.forEach(file => {
-      if (taskEnabled[path.basename(file, ".js")] === true) {
+      if (config.ActiveComponents[path.basename(file, ".js")] === true) {
         console.log(`GulpLoader loading ${file}''`);
 
         this.gulps.push(require("./" + file));

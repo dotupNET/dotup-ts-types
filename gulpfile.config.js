@@ -5,6 +5,18 @@ const BuildMode = require("./tools/gulp/gulpBuildMode");
 
 class GulpConfig {
 
+  ActiveComponents = {
+    "lambda": false,
+    "build": true,
+    "docs": true,
+    "mocha": true,
+    "eslint": true,
+    "watch": false,
+    "yogen": false,
+    "npm": true,
+    "statics": true,
+    "skill": false
+  };
 
   Paths = {
     // source
