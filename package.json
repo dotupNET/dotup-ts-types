@@ -11,7 +11,9 @@
     "access": "public"
   },
   "scripts": {
-    "release": "npm run clean-build && npm run test && git push && npm run gh-pages && npm publish",
+    "release": "npm run build-ts && npm run test && git push && npm run gh-pages && npm publish",
+    "release-esnext": "npm run build-esnext && npm run test && git push && npm run gh-pages && npm publish",
+    "release-r": "npm run build && npm run test && git push && npm run gh-pages && npm publish",
     "postversion": "git push && git push --tags",
     "clean-dist": "rimraf dist",
     "build-ts": "npm run clean-dist && tsc -p tsconfig.build.json",
