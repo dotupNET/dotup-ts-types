@@ -5,7 +5,6 @@
  * The gulp tasks are split in several files in the tools/gulp directory.
  */
 const GulpLoader = require("./tools/gulp/gulpLoader");
-const BuildMode = require("./tools/gulp/gulpBuildMode");
 const config = require("./gulpfile.config");
 
 // Load all gulp files.

@@ -5,7 +5,6 @@ const
   tsc = require("gulp-typescript"),
   sourcemaps = require("gulp-sourcemaps"),
   config = require("../../gulpfile.config")
-  BuildMode = require("./gulpBuildMode")
   ;
 
 const keys = {
@@ -50,7 +49,7 @@ module.exports.build = build;
 gulp.task(keys.build, build);
 
 gulp.task(keys["build-dev"], () => {
-  config.setBuildMode(BuildMode.dev);
+  config.setBuildMode(config.BuildMode.dev);
   return build();
 });
 

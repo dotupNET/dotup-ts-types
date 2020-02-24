@@ -2,7 +2,6 @@
 const path = require("path");
 const gulp = require("gulp");
 const AlexaPublisher = require("../scripts/AlexaPublisher");
-const BuildMode = require("../scripts/BuildModes");
 const AlexaCli = require("../scripts/AlexaCli");
 const config = require("../../gulpfile.config");
 
@@ -15,23 +14,23 @@ const manifest = new AlexaPublisher(rootPath);
 
 // Generate skill.json from template and prod config
 async function generateManifestProd() {
-  manifest.generateManifest(BuildMode.production);
+  manifest.generateManifest(config.BuildMode.production);
 }
 
 // Generate skill.json from template and dev config
 async function generateManifestDev() {
-  manifest.generateManifest(BuildMode.dev);
+  manifest.generateManifest(config.BuildMode.dev);
 }
 
 // Publish prod skill.json
 async function publishManifestProd() {
-  manifest.generateManifest(BuildMode.production);
+  manifest.generateManifest(config.BuildMode.production);
   cli.updateSkill(manifest.skillId);
 }
 
 // Publish dev skill.json
 async function publishManifestDev() {
-  manifest.generateManifest(BuildMode.dev);
+  manifest.generateManifest(config.BuildMode.dev);
   cli.updateSkill(manifest.skillId);
 }
 
@@ -44,7 +43,7 @@ module.exports.postBuild = postBuild;
 async function prePublish() {
   cli.generatePackageJson();
   cli.updateSkill(manifest.skillId);
-  if (config.buildMode === BuildMode.production) {
+  if (config.buildMode === config.BuildMode.production) {
     console.log("Installing dependencies...");
     cli.installDependencies();
   }
@@ -72,7 +71,7 @@ gulp.task("skill-generate-package-json", async () => {
 
 // 'clone skill into tmp folder'
 gulp.task("skill-clone", async () => {
-  manifest.loadConfiguration(BuildMode.dev);
+  manifest.loadConfiguration(config.BuildMode.dev);
 
   cli.cloneSkill(manifest.skillId);
 });

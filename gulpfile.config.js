@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 "use strict";
 //const skill = require('./secrets/skill.config.json');
-const BuildMode = require("./tools/gulp/gulpBuildMode");
 
 class GulpConfig {
+  BuildMode = Object.freeze({
+    "production": "production",
+    "dev": "dev"
+  });
 
   ActiveComponents = {
     "lambda": false,
@@ -36,7 +39,7 @@ class GulpConfig {
 
   setBuildMode = (value) => {
     this.buildMode = value;
-    if (value === BuildMode.dev) {
+    if (value === this.BuildMode.dev) {
       this.tsConfigFile = "tsconfig.json";
     } else {
       this.tsConfigFile = "tsconfig.build.json";
