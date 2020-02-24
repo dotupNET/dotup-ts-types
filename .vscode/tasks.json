@@ -67,6 +67,11 @@
       "type": "gulp",
       "task": "npm-publish",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "npm-publish",
+      "problemMatcher": []
     }
   ]
 }
