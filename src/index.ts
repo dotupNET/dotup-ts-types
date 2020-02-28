@@ -8,3 +8,8 @@ export * from "./RegexTools";
 export * from "./StringTools";
 export * from "./types";
 // export * from './IPlugin';
+export * from "./EnumTools";
+export * from "./HttpStatusCodes";
+export * from "./HttpVerbs";
+
+export * from "./errors";
