@@ -1,3 +1,4 @@
+*.log
 test/
 tools/
 coverage/
@@ -8,6 +9,7 @@ src/spec/
 dist/spec/
 dist/sample.*
 spec/
+pnpm-debug.log
 docs/
 scripts/
 .vscode
