@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>dotup-ts-types</title>
+	<title>@dotup/dotup-ts-types</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">dotup-ts-types</a>
+					<a href="index.html" class="title">@dotup/dotup-ts-types</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> dotup-ts-types</h1>
+			<h1>@dotup/dotup-ts-types</h1>
 		</div>
 	</div>
 </header>
@@ -71,6 +71,7 @@
 							<h3>Modules</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-module"><a href="modules/arraytools.html" class="tsd-kind-icon">Array<wbr>Tools</a></li>
+								<li class="tsd-kind-module"><a href="modules/numbertools.html" class="tsd-kind-icon">Number<wbr>Tools</a></li>
 								<li class="tsd-kind-module"><a href="modules/objecttools.html" class="tsd-kind-icon">Object<wbr>Tools</a></li>
 								<li class="tsd-kind-module"><a href="modules/stringtools.html" class="tsd-kind-icon">String<wbr>Tools</a></li>
 							</ul>
@@ -78,22 +79,31 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/extendableenum.html" class="tsd-kind-icon">Extendable<wbr>Enum</a></li>
+								<li class="tsd-kind-class"><a href="classes/extendableenum.html" class="tsd-kind-icon">Extendable<wbr>Enum</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/namedlist.html" class="tsd-kind-icon">Named<wbr>List</a></li>
+								<li class="tsd-kind-class"><a href="classes/sample.html" class="tsd-kind-icon">Sample</a></li>
+								<li class="tsd-kind-class"><a href="classes/withstringtag.html" class="tsd-kind-icon">With<wbr>String<wbr>Tag</a></li>
+								<li class="tsd-kind-class"><a href="classes/withoutstringtag.html" class="tsd-kind-icon">Without<wbr>String<wbr>Tag</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/idisposable.html" class="tsd-kind-icon">IDisposable</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/itypedproperty.html" class="tsd-kind-icon">ITyped<wbr>Property</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/iurl.html" class="tsd-kind-icon">IUrl</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/keyvaluepair.html" class="tsd-kind-icon">Key<wbr>Value<wbr>Pair</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported"><a href="globals.html#extendableenumtype" class="tsd-kind-icon">Extendable<wbr>Enum<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#asynccallbackfunction1" class="tsd-kind-icon">Async<wbr>Callback<wbr>Function1</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#asynccallbackfunction2" class="tsd-kind-icon">Async<wbr>Callback<wbr>Function2</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#extendableenumtype" class="tsd-kind-icon">Extendable<wbr>Enum<wbr>Type</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#functionnamesonly" class="tsd-kind-icon">Function<wbr>Names<wbr>Only</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#functionsonly" class="tsd-kind-icon">Functions<wbr>Only</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#mockof" class="tsd-kind-icon">Mock<wbr>Of</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#nested" class="tsd-kind-icon">Nested</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#partialnested" class="tsd-kind-icon">Partial<wbr>Nested</a></li>
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#propertiesonly" class="tsd-kind-icon">Properties<wbr>Only</a></li>
@@ -102,20 +112,181 @@
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#weaken" class="tsd-kind-icon">Weaken</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#sample" class="tsd-kind-icon">sample</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#x" class="tsd-kind-icon">x</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#async" class="tsd-kind-icon">Async</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#asynccallback" class="tsd-kind-icon">Async<wbr>Callback</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#event" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#parseurl" class="tsd-kind-icon">parse<wbr>Url</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#replace" class="tsd-kind-icon">replace</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#replacepath" class="tsd-kind-icon">replace<wbr>Path</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#sleep" class="tsd-kind-icon">sleep</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#timeoutafter" class="tsd-kind-icon">timeout<wbr>After</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#timeoutpromise" class="tsd-kind-icon">timeout<wbr>Promise</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
-					<a name="extendableenumtype" class="tsd-anchor"></a>
-					<h3>Extendable<wbr>Enum<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">Extendable<wbr>Enum<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="asynccallbackfunction1" class="tsd-anchor"></a>
+					<h3>Async<wbr>Callback<wbr>Function1</h3>
+					<div class="tsd-signature tsd-kind-icon">Async<wbr>Callback<wbr>Function1&lt;TResult, TArg&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/ExtendableEnum.ts#L1">ExtendableEnum.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L1">types.ts:1</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>TResult</h4>
+						</li>
+						<li>
+							<h4>TArg</h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>arg: <span class="tsd-signature-type">TArg</span></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5>err: <span class="tsd-signature-type">Error</span></h5>
+																	</li>
+																	<li>
+																		<h5>buf: <span class="tsd-signature-type">TResult</span></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="asynccallbackfunction2" class="tsd-anchor"></a>
+					<h3>Async<wbr>Callback<wbr>Function2</h3>
+					<div class="tsd-signature tsd-kind-icon">Async<wbr>Callback<wbr>Function2&lt;TResult, TArg1, TArg2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg2</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L2">types.ts:2</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>TResult</h4>
+						</li>
+						<li>
+							<h4>TArg1</h4>
+						</li>
+						<li>
+							<h4>TArg2</h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg2</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>arg1: <span class="tsd-signature-type">TArg1</span></h5>
+											</li>
+											<li>
+												<h5>arg2: <span class="tsd-signature-type">TArg2</span></h5>
+											</li>
+											<li>
+												<h5>callback: <span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, buf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-parameters-title">Parameters</h4>
+																<ul class="tsd-parameters">
+																	<li>
+																		<h5>err: <span class="tsd-signature-type">Error</span></h5>
+																	</li>
+																	<li>
+																		<h5>buf: <span class="tsd-signature-type">TResult</span></h5>
+																	</li>
+																</ul>
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="extendableenumtype" class="tsd-anchor"></a>
+					<h3>Extendable<wbr>Enum<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Extendable<wbr>Enum<wbr>Type&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/ExtendableEnum.ts#L2">ExtendableEnum.ts:2</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -125,32 +296,83 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="functionnamesonly" class="tsd-anchor"></a>
 					<h3>Function<wbr>Names<wbr>Only</h3>
-					<div class="tsd-signature tsd-kind-icon">Function<wbr>Names<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof T]: T[K] extends Function ? K : never; }[keyof T]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Function<wbr>Names<wbr>Only&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L4">types.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L6">types.ts:6</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="functionsonly" class="tsd-anchor"></a>
 					<h3>Functions<wbr>Only</h3>
-					<div class="tsd-signature tsd-kind-icon">Functions<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#functionnamesonly" class="tsd-signature-type">FunctionNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Functions<wbr>Only&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#functionnamesonly" class="tsd-signature-type">FunctionNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L5">types.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L7">types.ts:7</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="mockof" class="tsd-anchor"></a>
+					<h3>Mock<wbr>Of</h3>
+					<div class="tsd-signature tsd-kind-icon">Mock<wbr>Of&lt;Class, Omit&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L20">types.ts:20</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The MockOf type takes a class and an optional union of public members which
+							should be excluded in our mock.</p>
+						</div>
+					</div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>Class</h4>
+						</li>
+						<li>
+							<h4>Omit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">Class</span></h4>
+						</li>
+					</ul>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="nested" class="tsd-anchor"></a>
 					<h3>Nested</h3>
-					<div class="tsd-signature tsd-kind-icon">Nested<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Nested&lt;T, TContent&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L16">types.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L24">types.ts:24</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+						</li>
+						<li>
+							<h4>TContent</h4>
+						</li>
+					</ul>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -160,12 +382,21 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="partialnested" class="tsd-anchor"></a>
 					<h3>Partial<wbr>Nested</h3>
-					<div class="tsd-signature tsd-kind-icon">Partial<wbr>Nested<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Partial<wbr>Nested&lt;T, TContent&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L20">types.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L28">types.ts:28</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+						</li>
+						<li>
+							<h4>TContent</h4>
+						</li>
+					</ul>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -175,32 +406,50 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="propertiesonly" class="tsd-anchor"></a>
 					<h3>Properties<wbr>Only</h3>
-					<div class="tsd-signature tsd-kind-icon">Properties<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#propertynamesonly" class="tsd-signature-type">PropertyNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Properties<wbr>Only&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="globals.html#propertynamesonly" class="tsd-signature-type">PropertyNamesOnly</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L8">types.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L10">types.ts:10</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="propertynamesonly" class="tsd-anchor"></a>
 					<h3>Property<wbr>Names<wbr>Only</h3>
-					<div class="tsd-signature tsd-kind-icon">Property<wbr>Names<wbr>Only<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof T]: T[K] extends Function ? never : K; }[keyof T]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Property<wbr>Names<wbr>Only&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L7">types.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L9">types.ts:9</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="typesaveproperty" class="tsd-anchor"></a>
 					<h3>Type<wbr>Save<wbr>Property</h3>
-					<div class="tsd-signature tsd-kind-icon">Type<wbr>Save<wbr>Property<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Type<wbr>Save<wbr>Property&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L2">types.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L4">types.ts:4</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+					</ul>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -210,17 +459,431 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
 					<a name="weaken" class="tsd-anchor"></a>
 					<h3>Weaken</h3>
-					<div class="tsd-signature tsd-kind-icon">Weaken<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Weaken&lt;T, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/d394b36/src/types.ts#L25">types.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/types.ts#L32">types.ts:32</a></li>
 						</ul>
 					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+						<li>
+							<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 						</ul>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="sample" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> sample</h3>
+					<div class="tsd-signature tsd-kind-icon">sample<span class="tsd-signature-symbol">:</span> <a href="classes/sample.html" class="tsd-signature-type">Sample</a><span class="tsd-signature-symbol"> = new Sample()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/test/sample.ts#L63">test/sample.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="x" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> x</h3>
+					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ArrayTools.getArray(undefined)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/sample.ts#L3">sample.ts:3</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="async" class="tsd-anchor"></a>
+					<h3>Async</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Async&lt;T&gt;<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, onrejected<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L42">PromiseTools.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> onrejected: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="asynccallback" class="tsd-anchor"></a>
+					<h3>Async<wbr>Callback</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Async<wbr>Callback&lt;TResult, TArg&gt;<span class="tsd-signature-symbol">(</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg</span>, action<span class="tsd-signature-symbol">: </span><a href="globals.html#asynccallbackfunction1" class="tsd-signature-type">AsyncCallbackFunction1</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">Async<wbr>Callback&lt;TResult, TArg1, TArg2&gt;<span class="tsd-signature-symbol">(</span>arg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg1</span>, arg2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TArg2</span>, action<span class="tsd-signature-symbol">: </span><a href="globals.html#asynccallbackfunction2" class="tsd-signature-type">AsyncCallbackFunction2</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg2</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L51">PromiseTools.ts:51</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>TResult</h4>
+								</li>
+								<li>
+									<h4>TArg</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>arg: <span class="tsd-signature-type">TArg</span></h5>
+								</li>
+								<li>
+									<h5>action: <a href="globals.html#asynccallbackfunction1" class="tsd-signature-type">AsyncCallbackFunction1</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L52">PromiseTools.ts:52</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>TResult</h4>
+								</li>
+								<li>
+									<h4>TArg1</h4>
+								</li>
+								<li>
+									<h4>TArg2</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>arg: <span class="tsd-signature-type">TArg1</span></h5>
+								</li>
+								<li>
+									<h5>arg2: <span class="tsd-signature-type">TArg2</span></h5>
+								</li>
+								<li>
+									<h5>action: <a href="globals.html#asynccallbackfunction2" class="tsd-signature-type">AsyncCallbackFunction2</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg1</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">TArg2</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TResult</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="event" class="tsd-anchor"></a>
+					<h3>Event</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">Event&lt;T&gt;<span class="tsd-signature-symbol">(</span>emitter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventEmitter</span>, event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L9">PromiseTools.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emitter: <span class="tsd-signature-type">EventEmitter</span></h5>
+								</li>
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="parseurl" class="tsd-anchor"></a>
+					<h3>parse<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Url<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/iurl.html" class="tsd-signature-type">IUrl</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/RegexTools.ts#L4">RegexTools.ts:4</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/iurl.html" class="tsd-signature-type">IUrl</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="replace" class="tsd-anchor"></a>
+					<h3>replace</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">replace<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/RegexTools.ts#L37">RegexTools.ts:37</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace placeholder in text with args</p>
+								</div>
+								<p>Indexed:
+								const str = RegexTools.replace(&#39;{1} {0}&#39;, &#39;tool&#39;, &#39;Nice&#39;};</p>
+								<p>With Object:
+								const str = RegexTools.replace(&#39;{a} {b}&#39;, {b: &#39;tool&#39;, a: &#39;Nice&#39;}};</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="replacepath" class="tsd-anchor"></a>
+					<h3>replace<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">replace<wbr>Path<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/RegexTools.ts#L63">RegexTools.ts:63</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace placeholder in text with args</p>
+								</div>
+								<p>With Object:
+								const str = RegexTools.replacePath(&#39;{a} {b.1}&#39;, {b: {1:&#39;tool&#39;}, a: &#39;Nice&#39;}};</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>values: <span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="sleep" class="tsd-anchor"></a>
+					<h3>sleep</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">sleep<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L5">PromiseTools.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ms: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="timeoutafter" class="tsd-anchor"></a>
+					<h3>timeout<wbr>After</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">timeout<wbr>After&lt;T&gt;<span class="tsd-signature-symbol">(</span>timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, executor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>resolve<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, reject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L15">PromiseTools.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timeout: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>executor: <span class="tsd-signature-symbol">(</span>resolve<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, reject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>resolve<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, reject<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>resolve: <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter-siganture">
+																	<ul class="tsd-signatures tsd-kind-type-literal">
+																		<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																	</ul>
+																	<ul class="tsd-descriptions">
+																		<li class="tsd-description">
+																			<h4 class="tsd-parameters-title">Parameters</h4>
+																			<ul class="tsd-parameters">
+																				<li>
+																					<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+																				</li>
+																			</ul>
+																			<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<h5>reject: <span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+															<ul class="tsd-parameters">
+																<li class="tsd-parameter-siganture">
+																	<ul class="tsd-signatures tsd-kind-type-literal">
+																		<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>reason<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+																	</ul>
+																	<ul class="tsd-descriptions">
+																		<li class="tsd-description">
+																			<h4 class="tsd-parameters-title">Parameters</h4>
+																			<ul class="tsd-parameters">
+																				<li>
+																					<h5><span class="tsd-flag ts-flagOptional">Optional</span> reason: <span class="tsd-signature-type">any</span></h5>
+																				</li>
+																			</ul>
+																			<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="timeoutpromise" class="tsd-anchor"></a>
+					<h3>timeout<wbr>Promise</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">timeout<wbr>Promise&lt;T&gt;<span class="tsd-signature-symbol">(</span>timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, promise<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dotupNET/dotup-ts-types/blob/abfd264/src/PromiseTools.ts#L29">PromiseTools.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timeout: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>promise: <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -234,6 +897,9 @@
 						<a href="modules/arraytools.html">Array<wbr>Tools</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/numbertools.html">Number<wbr>Tools</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/objecttools.html">Object<wbr>Tools</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -243,16 +909,40 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-has-type-parameter">
+					<li class=" tsd-kind-class">
 						<a href="classes/extendableenum.html" class="tsd-kind-icon">Extendable<wbr>Enum</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/namedlist.html" class="tsd-kind-icon">Named<wbr>List</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/sample.html" class="tsd-kind-icon">Sample</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/withstringtag.html" class="tsd-kind-icon">With<wbr>String<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/withoutstringtag.html" class="tsd-kind-icon">Without<wbr>String<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idisposable.html" class="tsd-kind-icon">IDisposable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/itypedproperty.html" class="tsd-kind-icon">ITyped<wbr>Property</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iurl.html" class="tsd-kind-icon">IUrl</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/keyvaluepair.html" class="tsd-kind-icon">Key<wbr>Value<wbr>Pair</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#asynccallbackfunction1" class="tsd-kind-icon">Async<wbr>Callback<wbr>Function1</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#asynccallbackfunction2" class="tsd-kind-icon">Async<wbr>Callback<wbr>Function2</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#extendableenumtype" class="tsd-kind-icon">Extendable<wbr>Enum<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
@@ -260,6 +950,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#functionsonly" class="tsd-kind-icon">Functions<wbr>Only</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#mockof" class="tsd-kind-icon">Mock<wbr>Of</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#nested" class="tsd-kind-icon">Nested</a>
@@ -279,6 +972,39 @@
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#weaken" class="tsd-kind-icon">Weaken</a>
 					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#sample" class="tsd-kind-icon">sample</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#x" class="tsd-kind-icon">x</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#async" class="tsd-kind-icon">Async</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#asynccallback" class="tsd-kind-icon">Async<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#event" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parseurl" class="tsd-kind-icon">parse<wbr>Url</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#replace" class="tsd-kind-icon">replace</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#replacepath" class="tsd-kind-icon">replace<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sleep" class="tsd-kind-icon">sleep</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#timeoutafter" class="tsd-kind-icon">timeout<wbr>After</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#timeoutpromise" class="tsd-kind-icon">timeout<wbr>Promise</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -296,6 +1022,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -344,7 +1071,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
