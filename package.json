@@ -50,9 +50,10 @@
     "url": "git+https://github.com/dotupNET/dotup-ts-types.git"
   },
   "keywords": [
+    "several",
     "typescript",
-    "library",
-    "template"
+    "helper",
+    "functions"
   ],
   "author": "Peter Ullrich",
   "bugs": {
