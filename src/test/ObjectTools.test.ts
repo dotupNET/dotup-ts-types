@@ -82,12 +82,12 @@ describe("ObjectTools", () => {
 
   });
 
-  type Person = { id: string, firstName: string, lastName: string, age: number }
+  type Person = { id: string; firstName: string; lastName: string; age: number }
 
   const array: Person[] = [
     { id: "a", firstName: "John", lastName: "Smith", age: 27 },
     { id: "b", firstName: "Bill", lastName: "Brown", age: 53 }
-  ]
+  ];
 
   it("CopyProps", () => {
     const props = new Props();

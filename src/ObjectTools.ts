@@ -151,8 +151,8 @@ export class ObjectTools {
     K extends PropertyNamesOnly<T>
   >(array: Array<T>, indexKey: K): TypedProperty<T> {
     return array.reduce((result: TypedProperty<T>, current: T) => {
-      result[current[indexKey]] = current
-      return result
-    }, {})
+      result[current[indexKey]] = current;
+      return result;
+    }, {});
   }
 }
