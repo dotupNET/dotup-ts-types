@@ -2,6 +2,8 @@ import { expect } from "chai";
 import { ObjectTools } from "../ObjectTools";
 import { WithStringTag } from "./StringTagClass";
 
+class Props { a: string = "a"; b: string = "b"; c: string = "c"; }
+
 class SubClass {
   prop1 = "ValueOfProp1"
 }
@@ -78,6 +80,25 @@ describe("ObjectTools", () => {
 
     expect(names[1]).to.equal("C");
 
+  });
+
+  type Person = { id: string, firstName: string, lastName: string, age: number }
+
+  const array: Person[] = [
+    { id: "a", firstName: "John", lastName: "Smith", age: 27 },
+    { id: "b", firstName: "Bill", lastName: "Brown", age: 53 }
+  ]
+
+  it("CopyProps", () => {
+    const props = new Props();
+
+    const x = ObjectTools.ObjectFromArray(array, "id");
+
+    const copy = ObjectTools.CopyProps<Props, Omit<Props, "b">>(props, "a", "c");
+
+    expect(copy.a).to.equal("a");
+    expect((copy as any).b).to.be.undefined;
+    expect(copy.c).to.equal("c");
   });
 
 });

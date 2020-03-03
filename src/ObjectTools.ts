@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-namespace */
-export namespace ObjectTools {
+import { PropertyNamesOnly, TypedProperty } from "./types";
 
-  export function get<T>(obj: object, path: string): T {
+export class ObjectTools {
+
+  static get<T>(obj: object, path: string): T {
     const props = path.split(".");
     if (props.length > 1) {
       let o = (obj as any)[props[0]];
@@ -22,7 +22,7 @@ export namespace ObjectTools {
   /**
    * The classes must use the toStringTag symbol.
    */
-  export function isInstanceOf<T>(value: any, instanceOf: { new(): any }): value is T {
+  static isInstanceOf<T>(value: any, instanceOf: { new(): any }): value is T {
     if (typeof value !== "object") {
       return false;
     } else if ((instanceOf as any).name !== value.constructor.name) {
@@ -34,7 +34,7 @@ export namespace ObjectTools {
   }
 
   // Adds the element at a specific position inside the linked list
-  export function GetMethodNames(obj: any, ...excluded: string[]): string[] {
+  static GetMethodNames(obj: any, ...excluded: string[]): string[] {
     const skip: string[] = excluded || [];
     const methods: string[] = [];
     skip.push("constructor");
@@ -55,14 +55,13 @@ export namespace ObjectTools {
     return methods;
   }
 
-
-  function hasMethod<T>(obj: T, name: string): boolean {
+  static hasMethod<T>(obj: T, name: string): boolean {
     const desc = Object.getOwnPropertyDescriptor(obj, name);
 
     return !!desc && typeof desc.value === "function";
   }
 
-  export function GetOwnMethodNames<T>(instance: any, ...excluded: string[]): string[] {
+  static GetOwnMethodNames<T>(instance: any, ...excluded: string[]): string[] {
     const skip: string[] = excluded || [];
     const methods: string[] = [];
     skip.push("constructor");
@@ -71,7 +70,7 @@ export namespace ObjectTools {
     const keys = Reflect.ownKeys(obj);
     if (obj instanceof Object) {
       keys.forEach((k) => {
-        if (hasMethod(obj, k.toString()) && skip.indexOf(k as string) < 0) {
+        if (ObjectTools.hasMethod(obj, k.toString()) && skip.indexOf(k as string) < 0) {
           methods.push(k as string);
         }
       });
@@ -80,7 +79,29 @@ export namespace ObjectTools {
     return methods;
   }
 
-  export function CopyEachSource<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
+  static GetValue<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+  }
+
+  static CopyProps<TSource, TTarget>(source: TSource, ...props: PropertyNamesOnly<TSource>[]): TTarget {
+    const result: any = {};  
+    for (const prop of props) {
+      result[prop] = source[prop];
+    }
+    return result;
+  }
+
+  static CopyPartialProps<TSource>(source: TSource, ...props: PropertyNamesOnly<TSource>[]): Partial<TSource> {
+    const result: any = {};
+
+    for (const prop of props) {
+      result[prop] = source[prop];
+    }
+
+    return result;
+  }
+
+  static CopyEachSource<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
     Object.keys(source)
       .forEach(item => {
         (target as any)[item] = (source as any)[item];
@@ -89,7 +110,7 @@ export namespace ObjectTools {
     return target;
   }
 
-  export function CopyEachTarget<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
+  static CopyEachTarget<TSource, TTarget>(source: TSource, target: TTarget): TTarget {
     Object.keys(target)
       .forEach(item => {
         (target as any)[item] = (source as any)[item];
@@ -98,7 +119,7 @@ export namespace ObjectTools {
     return target;
   }
 
-  export function DeepMerge<T>(source: Partial<T>, target: Partial<T>) {
+  static DeepMerge<T>(source: Partial<T>, target: Partial<T>) {
     const s = source as any;
     const t = target as any;
 
@@ -107,11 +128,11 @@ export namespace ObjectTools {
       .forEach(item => {
 
         if (s[item].constructor === Object) {
-          DeepMerge(t[item], s[item]);
+          ObjectTools.DeepMerge(t[item], s[item]);
         } else if (Array.isArray(s[item])) {
 
           if (Array.isArray(t[item])) {
-            DeepMerge(t[item], s[item]);
+            ObjectTools.DeepMerge(t[item], s[item]);
           } else {
             t[item] = s[item];
           }
@@ -123,5 +144,15 @@ export namespace ObjectTools {
       });
 
     return t;
+  }
+
+  static ObjectFromArray<
+    T extends { [Key in K]: string }, // This is required for the reduce to work
+    K extends PropertyNamesOnly<T>
+  >(array: Array<T>, indexKey: K): TypedProperty<T> {
+    return array.reduce((result: TypedProperty<T>, current: T) => {
+      result[current[indexKey]] = current
+      return result
+    }, {})
   }
 }
