@@ -199,7 +199,7 @@ export class ObjectTools {
         t[key] = new Date(srcItem.getTime());
       } else if (srcItem instanceof Array) {
         const copy: any[] = [];
-        for (var i = 0, len = srcItem.length; i < len; i++) {
+        for (let i = 0, len = srcItem.length; i < len; i++) {
           const item = {};
           ObjectTools.DeepMerge(srcItem[i], item);
           copy[i] = item;
@@ -235,7 +235,7 @@ export class ObjectTools {
     // Array
     if (obj instanceof Array) {
       const copy = [];
-      for (var i = 0, len = obj.length; i < len; i++) {
+      for (let i = 0, len = obj.length; i < len; i++) {
         copy[i] = ObjectTools.DeepCopy(obj[i]);
       }
       return copy as any;
@@ -244,8 +244,8 @@ export class ObjectTools {
     // Object
     if (obj instanceof Object) {
       const copy: any = {};
-      for (var attr in obj) {
-        if ((obj as Object).hasOwnProperty(attr))
+      for (const attr in obj) {
+        if ((obj as Record<string, any>).hasOwnProperty(attr))
           copy[attr] = ObjectTools.DeepCopy(obj[attr]);
       }
       return copy;
