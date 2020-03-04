@@ -116,7 +116,7 @@ export class ObjectTools {
     TTarget extends Omit<TSource, Props>>
     (source: TSource, ...props: Props[]): TTarget {
     const result: any = {};
-    const keys = Object.keys(source).filter(k => props.some(p => p !== k)) as (keyof TSource)[];
+    const keys = Object.keys(source).filter(k => props.every(p => p !== k)) as (keyof TSource)[];
     for (const key of keys) {
       if (source[key]) {
         result[key] = source[key];
