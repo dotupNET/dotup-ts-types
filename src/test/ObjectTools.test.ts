@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { ObjectTools } from "../ObjectTools";
 import { WithStringTag } from "./StringTagClass";
 
-class Props { a: string = "a"; b: string = "b"; c: string = "c"; }
+class Props { a: string | null = null; b: string = "b"; c: string = "c"; }
 class DeepProps {
   a: string = "a";
   b: string = "b";
@@ -98,30 +98,40 @@ describe("ObjectTools", () => {
     { id: "b", firstName: "Bill", lastName: "Brown", age: 53 }
   ];
 
+  it("CopyNullProps", () => {
+    const props = new Props();
+
+    const copy = ObjectTools.CopyNullProps(props, "a", "c");
+
+    expect(copy.a).to.equal(props.a);
+    expect((copy as any).b).to.be.undefined;
+    expect(copy.c).to.equal("c");
+  });
+
   it("CopyProps", () => {
     const props = new Props();
 
     const copy = ObjectTools.CopyProps(props, "a", "c");
 
-    expect(copy.a).to.equal("a");
+    expect(copy.a).to.be.undefined;
     expect((copy as any).b).to.be.undefined;
     expect(copy.c).to.equal("c");
   });
 
   it("OmitProps", () => {
-    const props = new Props();
+    const props = { a: null, b: "b", c: "c" };
 
     const copy = ObjectTools.OmitProps(props, "b");
 
-    expect(copy.a).to.equal("a");
+    expect(copy.a).to.be.undefined; // because null and undefined are omitted from copy
     expect((copy as any).b).to.be.undefined;
-    expect(copy.c).to.equal("c");
+    expect(copy.c).to.equal(props.c);
   });
 
   it("DeepMerge", () => {
     const source = new DeepProps();
-    const target = ObjectTools.OmitProps(source,"d");
-    
+    const target = ObjectTools.OmitProps(source, "d");
+
     ObjectTools.DeepMerge(source, target);
 
     expect(ObjectTools.DeepEquals(source, target)).to.be.true;

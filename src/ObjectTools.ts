@@ -84,7 +84,7 @@ export class ObjectTools {
   }
 
 
-  static CopyProps<
+  static CopyNullProps<
     TSource,
     Props extends PropertyNamesOnly<TSource>,
     TTarget extends Pick<TSource, Props>>
@@ -92,6 +92,20 @@ export class ObjectTools {
     const result: any = {};
     for (const prop of props) {
       result[prop] = source[prop];
+    }
+    return result;
+  }
+
+  static CopyProps<
+    TSource,
+    Props extends PropertyNamesOnly<TSource>,
+    TTarget extends Pick<TSource, Props>>
+    (source: TSource, ...props: Props[]): TTarget {
+    const result: any = {};
+    for (const prop of props) {
+      if (source[prop]) {
+        result[prop] = source[prop];
+      }
     }
     return result;
   }
@@ -104,7 +118,9 @@ export class ObjectTools {
     const result: any = {};
     const keys = Object.keys(source).filter(k => props.some(p => p !== k)) as (keyof TSource)[];
     for (const key of keys) {
-      result[key] = source[key];
+      if (source[key]) {
+        result[key] = source[key];
+      }
     }
     return result;
   }
