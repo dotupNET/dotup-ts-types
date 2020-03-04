@@ -3,6 +3,15 @@ import { ObjectTools } from "../ObjectTools";
 import { WithStringTag } from "./StringTagClass";
 
 class Props { a: string = "a"; b: string = "b"; c: string = "c"; }
+class DeepProps {
+  a: string = "a";
+  b: string = "b";
+  c: Props = { a: "ca", b: "cb", c: "cc" };
+  d: Props[] = [
+    { a: "da1", b: "db1", c: "dc1" },
+    { a: "da2", b: "db2", c: "dc2" }
+  ]
+}
 
 class SubClass {
   prop1 = "ValueOfProp1"
@@ -92,13 +101,33 @@ describe("ObjectTools", () => {
   it("CopyProps", () => {
     const props = new Props();
 
-    const x = ObjectTools.ObjectFromArray(array, "id");
-
-    const copy = ObjectTools.CopyProps<Props, Omit<Props, "b">>(props, "a", "c");
+    const copy = ObjectTools.CopyProps(props, "a", "c");
 
     expect(copy.a).to.equal("a");
     expect((copy as any).b).to.be.undefined;
     expect(copy.c).to.equal("c");
+  });
+
+  it("OmitProps", () => {
+    const props = new Props();
+
+    const copy = ObjectTools.OmitProps(props, "b");
+
+    expect(copy.a).to.equal("a");
+    expect((copy as any).b).to.be.undefined;
+    expect(copy.c).to.equal("c");
+  });
+
+  it("DeepMerge", () => {
+    const source = new DeepProps();
+    const target = ObjectTools.OmitProps(source,"d");
+    
+    ObjectTools.DeepMerge(source, target);
+
+    expect(ObjectTools.DeepEquals(source, target)).to.be.true;
+    // expect(copy.a).to.equal("a");
+    // expect((copy as any).b).to.be.undefined;
+    // expect(copy.c).to.equal("c");
   });
 
 });

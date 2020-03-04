@@ -83,21 +83,29 @@ export class ObjectTools {
     return obj[key];
   }
 
-  static CopyProps<TSource, TTarget>(source: TSource, ...props: PropertyNamesOnly<TSource>[]): TTarget {
-    const result: any = {};  
+
+  static CopyProps<
+    TSource,
+    Props extends PropertyNamesOnly<TSource>,
+    TTarget extends Pick<TSource, Props>>
+    (source: TSource, ...props: Props[]): TTarget {
+    const result: any = {};
     for (const prop of props) {
       result[prop] = source[prop];
     }
     return result;
   }
 
-  static CopyPartialProps<TSource>(source: TSource, ...props: PropertyNamesOnly<TSource>[]): Partial<TSource> {
+  static OmitProps<
+    TSource,
+    Props extends PropertyNamesOnly<TSource>,
+    TTarget extends Omit<TSource, Props>>
+    (source: TSource, ...props: Props[]): TTarget {
     const result: any = {};
-
-    for (const prop of props) {
-      result[prop] = source[prop];
+    const keys = Object.keys(source).filter(k => props.some(p => p !== k)) as (keyof TSource)[];
+    for (const key of keys) {
+      result[key] = source[key];
     }
-
     return result;
   }
 
@@ -120,30 +128,131 @@ export class ObjectTools {
   }
 
   static DeepMerge<T>(source: Partial<T>, target: Partial<T>) {
-    const s = source as any;
+    const src = source as any;
     const t = target as any;
 
-    Object
-      .keys(s)
-      .forEach(item => {
+    const keys = Object.keys(src);
+    for (const key of keys) {
 
-        if (s[item].constructor === Object) {
-          ObjectTools.DeepMerge(t[item], s[item]);
-        } else if (Array.isArray(s[item])) {
+      if (src[key] instanceof Array) {
 
-          if (Array.isArray(t[item])) {
-            ObjectTools.DeepMerge(t[item], s[item]);
-          } else {
-            t[item] = s[item];
-          }
-
-        } else {
-          t[item] = s[item];
+        if (!Array.isArray(t[key])) {
+          t[key] = [];
         }
+        ObjectTools.DeepMerge(src[key], t[key]);
 
-      });
+      } else if (src[key] instanceof Object) {
+        if (!t[key]) t[key] = {};
+        ObjectTools.DeepMerge(src[key], t[key]);
+      } else if (src[key] instanceof Date) {
+        t[key] = new Date(src[key].getTime());
+      } else {
+        t[key] = src[key];
+      }
+
+    }
+
+    // return t;
+  }
+
+  static DeepEquals<T>(source: T, target: T): boolean {
+    // const source = source as any;
+    // const target = target as any;
+    let result = true;
+
+    const keys = Object.keys(source) as (keyof T)[];
+    for (const key of keys) {
+
+      if (source[key] instanceof Array) {
+        result = ObjectTools.DeepEquals(source[key], target[key]);
+      } else if (source[key] instanceof Object) {
+        result = ObjectTools.DeepEquals(source[key], target[key]);
+      } else if (source[key] instanceof Date) {
+        if (target[key] instanceof Date) {
+          return (source[key] as any as Date).getTime() === (target[key] as any as Date).getTime();
+        } else {
+          result = false;
+        }
+      } else {
+        result = target[key] === source[key];
+      }
+
+      if (result !== true) {
+        return result;
+      }
+    }
+
+    return result;
+  }
+
+  static DeepMerge2<T>(source: Partial<T>, target: Partial<T>) {
+    const t = target as any;
+
+    const keys = Object.keys(source) as any as (keyof T)[];
+
+    for (const key of keys) {
+      const srcItem = source[key] as any;
+
+      if (srcItem instanceof Object) {
+        ObjectTools.DeepMerge(srcItem, t[key]);
+      } else if (srcItem instanceof Date) {
+        t[key] = new Date(srcItem.getTime());
+      } else if (srcItem instanceof Array) {
+        const copy: any[] = [];
+        for (var i = 0, len = srcItem.length; i < len; i++) {
+          const item = {};
+          ObjectTools.DeepMerge(srcItem[i], item);
+          copy[i] = item;
+        }
+        t[key] = copy;
+        // ObjectTools.DeepMerge(srcItem, t[key]);
+        // if (Array.isArray(t[key])) {
+        // } else {
+        //   t[key] = [...srcItem];
+        // }
+
+      } else {
+        t[key] = srcItem;
+      }
+
+    }
 
     return t;
+  }
+
+  static DeepCopy<T>(obj: T): T {
+
+    // Null or undefined
+    if (obj == null) {
+      return obj;
+    }
+
+    // Date
+    if (obj instanceof Date) {
+      return new Date(obj.getTime()) as any;
+    }
+
+    // Array
+    if (obj instanceof Array) {
+      const copy = [];
+      for (var i = 0, len = obj.length; i < len; i++) {
+        copy[i] = ObjectTools.DeepCopy(obj[i]);
+      }
+      return copy as any;
+    }
+
+    // Object
+    if (obj instanceof Object) {
+      const copy: any = {};
+      for (var attr in obj) {
+        if ((obj as Object).hasOwnProperty(attr))
+          copy[attr] = ObjectTools.DeepCopy(obj[attr]);
+      }
+      return copy;
+    }
+
+    // Others
+    return obj;
   }
 
   static ObjectFromArray<
