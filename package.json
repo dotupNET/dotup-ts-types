@@ -1,6 +1,6 @@
 {
   "name": "@dotup/dotup-ts-types",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Typescript types and helper",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,7 +13,7 @@
   "scripts": {
     "release": "npm run build-ts && npm run test && git push && npm run gh-pages && npm publish",
     "release-esnext": "npm run build-esnext && npm run test && git push && npm run gh-pages && npm publish",
-    "release-r": "npm run gh-pages && npm run build && npm run test && git push && npm publish",
+    "release-r": "npm run test && npm run build && git push && npm publish",
     "postversion": "git push && git push --tags",
     "clean-dist": "rimraf dist",
     "clean-node_modules": "rimraf node_modules",
