@@ -30,3 +30,5 @@ copyStaticAssets.ts
 rollup.config.js
 .mocharc.json
 .eslint*
+.publish
+tsconfig*.json
